@@ -1,0 +1,309 @@
+.shipContainer{
+	transition: all 120s ease-in-out;
+	position: absolute;
+	left: 76%;
+	top: 83%;
+}
+
+.ship-move-left{
+	transform: translate(-1700px,0);
+}
+
+.ship-move-right{
+	transform: translate(0,0);
+}
+
+.ship{
+		animation-name: pitching;
+		animation-duration: 5000ms;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+}
+
+@keyframes pitching {
+		0%   {transform:rotate(-2deg);}
+		14%  {transform:rotate(-4deg);}
+		29% {transform:rotate(-2deg);}
+		43% {transform:rotate(0deg);}
+		57% {transform:rotate(2deg);}
+		71% {transform:rotate(4deg);}
+		85% {transform:rotate(2deg);}
+		100% {transform:rotate(0deg);}
+}
+
+
+
+.screenContainer{
+	overflow-x: hidden;
+	position: relative;
+  	width: 100%;
+	height: calc(100%);
+	z-index: 1;
+
+	.fromTestToVideo{
+	    position: absolute;
+	    top: 5%;
+	    left: 2%;
+	    height: 10%;
+	    width: 5%;
+	    z-index: 99;
+	    background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url(../../../img/controll/scrollTop.png);
+	}
+
+	a{
+		cursor: pointer;
+	}
+	.maps{
+		position: relative;
+		min-width: 1024px;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		display: none;
+
+		.birthdayPeter{
+			display: none;
+		}
+
+		&#map-history{
+			.birthdayPeter{
+				pointer-events: none;
+				display: block;
+			}
+		}
+		.modal{
+			display: none;
+			background: #ffffff;
+			border: #ffffff solid 1px;
+			position: absolute;
+			top:16%;
+			left:49%;
+			border-radius: 7px;
+			width: 20%;
+			height: 24%;
+
+			.modalTitle{
+				padding: 20px 20px;
+			}
+		}
+
+		.modal-athens{
+			top:16%;
+			left:49%;
+		}
+
+		.modal-delphi{
+			left: 36%;
+		 	top: 29%;
+		}
+
+		.modal-korfu{
+			left: 17%;
+	    top: 65%;
+		}
+
+		.modal-crete{
+			left: 69%;
+	    top: 64%;
+		}
+
+		.map {
+			position: relative;
+			width: 100%;
+			height: 111%;
+			min-width: 1024px;
+			left: 0;
+			top: 0;
+		}
+
+		.point{
+			position: absolute;
+			background-position: center !important;
+			background-repeat: no-repeat !important;
+			width: 115px;
+			height: 113px;
+			z-index: 2;
+		}
+
+		.done{
+			position: absolute;
+			background-position: center !important;
+			background-repeat: no-repeat !important;
+			width: 57px;
+			height: 57px;
+			z-index: 2;
+		}
+
+		.animatePoint{
+			transition: all 2s ease;
+		}
+
+		.pointStart{
+			transform: scale(0.5);
+    		z-index: 3;
+		}
+
+		.pointFinish{
+			z-index: 2;
+			transform: scale(0.5);
+			opacity: 1;
+		}
+
+		.athens{
+			top: 10%;
+			left: 46%;
+		}
+
+		.delphi{
+			top: 23%;
+			left: 33%;
+		}
+
+		.korfu{
+			top: 58%;
+			left: 13.5%;
+		}
+
+		.crete{
+			top: 57%;
+			left: 86%;
+		}
+
+		.illustrationNature {
+		    top: 16%;
+			left: 2%;
+		}
+
+		.illustrationStyle{
+			top: 17%;
+			left: 24%;
+		}
+
+		.illustrationText{
+			top: 2%;
+			left: 45.2%;
+		}
+
+		.illustrationDetail{
+			top: 1%;
+			left: 70.5%;
+		}
+
+		.birthdayPeter{
+			top: 52%;
+			left: 5.5%;
+
+			@media screen and (max-height: 768px){
+				top: 49.5%;
+				left: 6.5%;
+			}
+			@media screen and (max-height: 660px){
+				top: 43.5%;
+			}
+		}
+
+		.fortunePeter{
+			top: 51.5%;
+			left: 21%;
+
+			@media screen and (max-height: 768px){
+				top: 49.5%;
+				left: 20.5%;
+			}
+			@media screen and (max-height: 660px){
+				top: 43.5%;
+			}
+		}
+
+		.euroDressPeter{
+			top: 51.5%;
+			left: 42%;
+
+			@media screen and (max-height: 768px){
+				top: 49.5%;
+				left: 41%;
+			}
+			@media screen and (max-height: 660px){
+				top: 43.5%;
+			}
+		}
+
+		.SaintPetersburg{
+			top: 51.5%;
+			left: 60%;
+
+			@media screen and (max-height: 768px){
+				top: 49.5%;
+				left: 59.5%;
+			}
+			@media screen and (max-height: 660px){
+				top: 43.5%;
+			}
+		}
+
+		.deathPeter{
+			top: 51.5%;
+			left: 80%;
+
+			@media screen and (max-height: 768px){
+				top: 49.5%;
+				left: 77.6%;
+			}
+			@media screen and (max-height: 660px){
+				top: 43.5%;
+			}
+		}
+
+		.cloud {
+			position: absolute;
+	   		transition: all 120s ease-in-out;
+			z-index: 1;
+		}
+
+		.move-up{
+			transform: translate(0,-1920px);
+		}
+		.move-down{
+			transform: translate(0,1920px);
+		}
+		.move-right{
+			transform: translate(1920px,0);
+		}
+		.move-left{
+			transform: translate(-1920px,0);
+		}
+
+	}
+}
+@media screen and (max-height:768px) {
+	#antiquityInspirationMap .screenContainer .athens{
+		left: 45%;
+	}
+	#antiquityInspirationMap .screenContainer .korfu{
+		left: 12.5%;
+	}
+}
+
+@media screen and (max-height:660px) {
+	.screenContainer .maps .illustrationStyle {
+	    top: 12%;
+	    left: 24%;
+	}
+	.screenContainer .maps .illustrationDetail {
+	    top: 0%;
+	    left: 68.5%;
+	}
+
+	.screenContainer .maps .map {
+	    position: relative;
+	    width: 100%;
+	    height: 100%;
+	    min-width: 1024px;
+	    min-height: 768px;
+	    left: 0;
+	    top: -15.8vh;
+	}
+}

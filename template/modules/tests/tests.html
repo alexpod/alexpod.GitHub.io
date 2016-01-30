@@ -1,0 +1,102 @@
+<div id="tests">
+</div>
+	<script id="testTemplate" type="text/x-handlebars-template">
+		<a id="soundTestButton" class="soundTestButton"></a>
+		<a class="goBackButton"></a>
+		<a class="goNext"></a>
+		{{#each questions}}
+			<div id={{id}} data-id={{dataId}} style=background-image:url({{background}})>
+				<section class="first" data-count="0">
+                    <div class="frame">
+                        <h1>{{name}}</h1>
+                        <p class="subtitle">{{cityEntry.subtitle}}</p>
+                        <p class="text">{{cityEntry.aditionalSubtitle}}</p>
+                        <p class="question">{{cityEntry.text}}</p>
+                    </div>
+				</section>
+				{{#each cityBloks}}
+					<section class="bloks" data-count={{math @index "+" 1}} >
+						{{#if left.image}}
+							<div class="left">
+								<img class="bloksImage" src={{left.image}}>
+							</div>
+							<div class="right">
+								<h1>{{right.header}}</h1>
+								{{#each right.text}}
+									<p>{{this}}</p>
+								{{/each}}
+							</div>
+						{{else}}
+							<div class="right">
+								<img class="bloksImage" src={{right.image}}>
+							</div>
+							<div class="left">
+								<h1>{{left.header}}</h1>
+								{{#each left.text}}
+									<p>{{this}}</p>
+								{{/each}}
+							</div>
+						{{/if}}
+					</section>
+				{{/each}}
+				<section class='questions'>
+					<h1>Задание</h1>
+					<p class="text">{{question}}</p>
+					{{#if status}}
+						<div class="answers">
+					{{else}}
+						<div class="answers active">
+					{{/if}}
+						{{#each answers}}
+							{{#if wrong}}
+								<div class="imgContainer">
+									<div class="img">
+										<img src={{wrong.img}} class="false" data-toogle="wrongHover">
+										<a data-toogle="wrongHover"></a>
+									</div>
+									<div class="imageCover wrongHover">
+										<i></i>
+										<div class="text">
+											<p>Нет</p>
+											<p>{{wrong.text}}</p>
+										</div>
+									</div>
+								</div>
+							{{else}}
+								<div class="imgContainer">
+									<div class="img">
+										<img src={{right.img}} class="true" data-toogle="rightHover">
+										<a data-toogle="rightHover"></a>
+									</div>
+									<div class="imageCover rightHover">
+										<div class="text">
+											<p>Правильно</p>
+											<p>{{right.text}}</p>
+										</div>
+									</div>
+								</div>
+							{{/if}}
+						{{/each}}
+						</div>
+				</section>
+			</div>
+		{{/each}}
+		<div id="finishTest" class="finishTest finishTest{{name}}">
+			<h1>Поздравляем!</h1>
+			<p>Вы прошли этап игры</p>
+			<p class="testName">{{testName}}</p>
+			<p>{{finishTestText}}</p>
+			<ul>
+				{{#each questions}}
+					<li>
+						<p class="rewardImagTitle">{{name}}</p>
+						<div class="rewardImg">
+							<img src={{reward}}>
+						</div>
+					</li>
+				{{/each}}
+			</ul>
+			<a href="#getRevard-{{name}}">Собрать картину</a>
+		</div>
+		</div>
+	</script>

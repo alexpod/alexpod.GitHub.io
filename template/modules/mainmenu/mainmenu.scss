@@ -1,0 +1,226 @@
+#menu {
+	td {
+		padding: 0;
+	}
+	width: 100%;
+	height: 100%;
+	height: 105px;
+	border-spacing: 0;
+	border-collapse: separate;
+	#mainMenu {
+		height: 73px;
+		td {
+			background-color: #363636;
+			color: #999999;
+			button{
+				background-color: transparent;
+				border: 0;
+				min-width: 98px;
+				border-right: 1px solid #717171;
+				height: 73px;
+				cursor: pointer;
+				vertical-align: top;
+				color: #999;
+				text-transform: uppercase;
+				font-size: 19px;
+				text-indent: 1px;
+				padding: 0 33px;
+				> img {
+					height: 26px;
+				}
+				&.pushed{
+					background-color: #4d4d4d;
+				}
+			}
+		}
+		.leftSide {
+			box-sizing: initial;
+			> .icon {
+				cursor: pointer;
+				padding: 20px 30px;
+				> div {
+					width: 5.7vh;
+					height: 1vh;
+					margin: 4px auto;
+					background-color: #999999;
+				}
+			}
+			.leftMenu {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 105px;
+		    z-index: 5;
+				.overlay {
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					background-color: rgba(0, 0, 0, 0.5);
+				}
+				.menu {
+					width: 562px;
+					height: 100%;
+					background-color: #4d4d4d;
+					position: relative;
+					.container {
+						position: absolute;
+						width: 562px;
+						bottom: 0;
+						padding-bottom: 20px;
+						.divider {
+							height: 7px;
+							&.blue {
+								background-color: #1c9cc9;
+							}
+							&.pink {
+								background-color: #c70462;
+							}
+							& + .item {
+								border-top: 1px solid transparent;
+							}
+						}
+						.item {
+							display: block;
+							height: 11.23%;
+							border-top: 1px solid #fff;
+							color: #fff;
+							text-decoration: none;
+							line-height: 80px;
+							text-transform: uppercase;
+							padding-left: 90px;
+							font-size: 20px;
+							position: relative;
+							&:hover:not(.icon) {
+								background-color: #c41230;
+								border-top: 1px solid transparent;
+							}
+							&.active {
+								background-color: #424041;
+								border-top: 1px solid transparent;
+							}
+							&.icon:before {
+								content: " ";
+								width: 40px;
+								height: 40px;
+								position: absolute;
+								top: 20px;
+								left: 20px;
+								background-position: 50% 50%;
+								background-repeat: no-repeat;
+							}
+							&.icon-game:before {
+								background-image: url(../../../img/controll/game.png);
+							}
+							&.icon-library:before {
+								background-image: url(../../../img/controll/library.png);
+							}
+							&.icon-bonus:before {
+								background-image: url(../../../img/controll/bonus.png);
+							}
+						}
+					}
+				}
+				&.hide {
+					display: none;
+				}
+			}
+		}
+		.breadcrumbs {
+			border-left: 1px solid #717171;
+			border-right: 1px solid #717171;
+			padding: 0 25px;
+			text-transform: uppercase;
+			font-size: 19px;
+			text-indent: 1px;
+			width: 100%;
+			.divider {
+				margin: 0 27px;
+				font-size: 22px;
+				font-weight: bold;
+			}
+			span{
+				margin:0 5px;
+
+				&.white{
+					color: #ffffff;
+				}
+				&.verticalBar{
+					color: #c41230;
+					font-weight: bolder;
+				}
+			}
+		}
+		.rightSide {
+			white-space: nowrap;
+			box-sizing: border-box;
+			.selectSection{
+				display: none;
+				position: absolute;
+			    bottom: 103px;
+			    color: #fff;
+			    width: 239px;
+			    height: 100px;
+			    z-index: 999;
+			    text-align: center;
+				background-image: url(../../../img/controll/plashka.png);
+				background-repeat: no-repeat;
+				&.reloadButton{
+					right: 342px;
+					display: block;
+				}
+				&.turnOfSound{
+					right: 240px;
+					display: block;
+				}
+				&.goMenu{
+					right: 0px;
+					display: block;
+					background-image: url(../../../img/controll/plashkaLeft.png)!important;
+				}
+				a{
+					cursor: pointer;
+			    background: #fff;
+			    padding: 5px;
+			    color: #000;
+			    width: 65px;
+			    margin: 0 15px;
+			    display: inline-block;
+			    height: 30px;
+
+					&:hover{
+						background: #000;
+						color: #fff;
+					}
+				}
+			}
+			button:last-child {
+				border-right: 0;
+			}
+		}
+	}
+	#copyRight {
+		background-color: #000;
+		color: #757575;
+		td {
+			padding-left: 30px;
+			font-size: 12px;
+			color: #333333;
+		}
+	}
+}
+@media screen and (max-height:900px) {
+	#menu #mainMenu .breadcrumbs{
+		font-size: 18px;
+	}
+}
+@media screen and (max-height:768px) {
+	#menu #mainMenu .leftSide .leftMenu .menu .container .item{
+		line-height: 65px;
+	}
+	#menu #mainMenu .leftSide .leftMenu .menu .container .item.icon:before {
+		top: 11px;
+	}
+}

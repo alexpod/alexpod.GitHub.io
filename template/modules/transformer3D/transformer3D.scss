@@ -1,0 +1,164 @@
+@import "../../../scss/partials/mixins/animation.scss";
+.container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  background-color: #717171;
+
+  #cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @include transform-style(preserve-3d);
+    @include transition(transform 5s);
+
+    &.show-front  {
+
+      .topSide {
+        transform: perspective(10000px) translateZ(-409px)  rotateX(90deg);
+        top: 100%\9;
+      }
+
+      .frontSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(0deg);
+        top:0\9;
+      }
+
+      .bottomSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(270deg);
+        top: 100%\9;
+      }
+
+      .backSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(180deg);
+        top: 100%\9;
+      }
+
+    }
+
+    &.show-top {
+
+      .topSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(0deg);
+        top:0\9;
+      }
+
+      .frontSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(-90deg);
+        top: 100%\9;
+      }
+
+      .bottomSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(270deg);
+        top: 100%\9;
+      }
+
+      .backSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(90deg);
+        top: 100%\9;
+      }
+    }
+
+    &.show-bottom {
+      .frontSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(90deg);
+        top:-100%\9;
+      }
+
+      .topSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(180deg);
+        top:-100%\9;
+      }
+
+      .bottomSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(360deg);
+        top:0\9;
+      }
+
+      .backSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(270deg);
+        top:-100%\9;
+      }
+
+    }
+
+    &.show-back  {
+      .frontSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(180deg);
+        top:100%\9;
+      }
+
+      .topSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(270deg);
+        top:-100%\9;
+      }
+
+      .bottomSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(450deg);
+        top:-100%\9;
+      }
+
+      .backSide {
+        transform: perspective(10000px) translateZ(-409px) rotateX(360deg);
+        top: 0\9;
+      }
+    }
+
+    figure  {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      min-width: 1024px;
+      display: block;
+      position: absolute;
+      @include backface-visibility(hidden);
+      @include transition(transform 1s);
+    }
+
+    .topSide {
+      transform-origin:50% 50% -437px;
+
+      @media screen and (max-height:900px) {
+        transform-origin:50% 50% -397px;
+      }
+
+      @media screen and (max-height:768px) {
+        transform-origin:50% 50% -331px;
+      }
+    }
+    .frontSide {
+      transform-origin:50% 50% -437px;
+
+      @media screen and (max-height:900px) {
+        transform-origin:50% 50% -397px;
+      }
+
+      @media screen and (max-height:768px) {
+        transform-origin:50% 50% -331px;
+      }
+    }
+    .bottomSide {
+      transform-origin:50% 50% -437px;
+
+      @media screen and (max-height:900px) {
+        transform-origin:50% 50% -397px;
+      }
+
+      @media screen and (max-height:768px) {
+        transform-origin:50% 50% -331px;
+      }
+    }
+    .backSide {
+      transform-origin:50% 50% -437px;
+
+      @media screen and (max-height:900px) {
+        transform-origin:50% 50% -397px;
+      }
+
+      @media screen and (max-height:768px) {
+        transform-origin:50% 50% -331px;
+      }
+    }
+  }
+}

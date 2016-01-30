@@ -1,0 +1,26 @@
+<div class="screenContainer">
+	<script id="mapsTemplate" type="text/x-handlebars-template">
+		{{#each maps}}
+		<div class="maps" id="map-{{id}}" >
+				<a href="#video/{{id}}" class="fromTestToVideo"></a>
+				<img class="map" src="{{mapImage}}"/>
+				<a class="birthdayPeter">
+					<img class="point pointStart birthdayPeter" src="/img/maps/pointBlack.png"/>
+				</a>
+				{{#each points}}
+				<a class="{{id}}">
+					<img class="point pointStart {{id}}" data-id="{{id}}" src="{{startImage}}"/>
+					<img class="point pointFinish animatePoint {{id}}" data-id="{{id}}" src="{{finishImage}}"/>
+				</a>
+				{{/each}}
+				{{#if extraObjects}}
+					{{#each extraObjects}}
+					<div class ="{{class}}">
+						<img class="{{id}} " src="{{image}}"/>
+					</div>
+					{{/each}}
+				{{/if}}
+		</div>
+		{{/each}}
+	</script>
+</div>

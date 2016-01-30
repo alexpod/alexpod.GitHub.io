@@ -1,0 +1,72 @@
+<div id="reader">
+
+</div>
+<script id="pageTemplate" type="text/x-handlebars-template">
+		<span class="sliderControl left" data-controll="previousPage"></span>
+		<div id="dataContainer">
+			<a href="#goFront" class="goFront"></a>
+			{{#each this}}
+				{{#ifCond @index "==" 0}}
+					<div class="bookSpreads active" data-number={{math @index "+" 1}}>
+				{{else}}
+					<div class="bookSpreads" data-number={{math @index "+" 1}}>
+				{{/ifCond}}
+						{{#each this}}
+					    	<div class={{@key}}>
+					    	{{#if menu}}
+					    		<p class='title'>{{title}}</p>
+					    		{{#each menu}}
+					    			<div class='menuBlock'>
+					    				<h3>{{@key}}</h3>
+										{{#each this}}
+											<p class='text' data-menu={{link}}>{{text}}</p>
+										{{/each}}
+									</div>
+					    		{{/each}}
+					    		<hr/>
+								<div class='pageNumber'><span>{{page}}</span></div>
+					    	{{else}}
+								{{#if image}}
+									<div class="imageWrapper">
+										<img src={{thumbnail}}>
+										<div class="imageTitleCover">
+											<p class="imageTitle">{{title}}</p>
+											<img class="openModal" data-fullImage={{image}} src="img/controll/loupe.png">
+										</div>
+									</div>
+								{{else}}
+									<p class='title'>{{title}}</p>
+									<div class='textWrapper'>
+										{{#each text}}
+											<p class='text'>{{this}}</p>
+										{{/each}}
+									</div>
+									<hr/>
+									<div class='pageNumber'><span>{{page}}</span></div>
+								{{/if}}
+							{{/if}}
+							</div>
+						{{/each}}
+					</div>
+			{{/each}}
+		</div>
+		<div id="paginator">
+			<ul>
+				{{#each this}}
+					{{#ifCond @index "==" 0}}
+						<li class="active" data-link={{math @index "+" 1}}>
+					{{else}}
+						<li data-link={{math @index "+" 1}}>
+					{{/ifCond}}
+							<img src="img/controll/book.jpg">
+						</li>
+				{{/each}}
+			</ul>
+		</div>
+		<span class="sliderControl right" data-controll="nextPage"></span>
+		<div id="modal">
+			<div class="modal-body">
+				<p class="close">x</p>
+			</div>
+		</div>
+	</script>

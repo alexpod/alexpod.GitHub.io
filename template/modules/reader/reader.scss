@@ -1,0 +1,262 @@
+#reader{
+	width: 100%;
+	height: 100%;
+	font-weight: 400;
+	font-size: 1.1vw;
+	line-height: 1.1;
+	background: white none repeat scroll 0 0;
+
+	@media screen and (max-width: 660px) {
+	    font-size: 1.1vw;
+	}
+
+	#dataContainer{
+		height: calc(100% - 60px);
+		overflow: hidden;
+
+		a.goFront{
+		    position: absolute;
+		    z-index: 10;
+		    margin: 0;
+		    padding: 0;
+		    border: none;
+	        width: 5%;
+		    height: 10%;
+		    transition: all 500ms ease;
+		    background-color: rgba(0,0,0,0);
+		    background-repeat: no-repeat;
+		    background-image: url(../../../img/controll/button_backToGame.svg);
+		    background-size: contain;
+		    bottom: 10%;
+		    left: 47.5%;
+			transition: all .2s ease-in-out;
+
+			&:hover{
+				transform: scale(1.1);
+			}
+	    }
+		.bookSpreads{
+			height: 100%;
+			display: none;
+
+			&.active{
+				display: block;
+			}
+
+			.menuBlock{
+				width: 80%;
+				margin-left: 10%;
+
+				@media screen and (min-width: 480px) {
+				    font-size: 1vw;
+				}
+
+				h3{
+					margin: 40px 0 10px;
+					font-weight: 400;
+				}
+				.text:hover{
+					cursor: pointer;
+					color: #c41230;
+				}
+			}
+
+			.rightPage{
+				width: 50%;
+				height: 100%;
+				float: right;
+			    position: relative;
+			}
+			.leftPage{
+				float: left;
+				width: 50%;
+				height: 100%;
+			    position: relative;
+
+			    .imageWrapper{
+				    width: 100%;
+				}
+			}
+			.title{
+				text-transform: uppercase;
+				text-align: center;
+				font-weight: 500;
+				font-size: 1.5vw;
+			}
+			.textWrapper{
+				padding:2% 12%;
+			}
+			.pageNumber{
+				text-align: center;
+			    position: absolute;
+		    	width: 80%;
+		    	bottom: 50px;
+		   		margin-left: 50px;
+
+		   		span{
+		   			width: 10%;
+		   			background-color: #ffffff;
+		   			padding: 0 50px;
+		   		}
+			}
+			hr{
+				position: absolute;
+			    width: 80%;
+			    bottom: 50px;
+			    margin-left: 50px;
+			}
+
+			.imageWrapper{
+				height: 100%;
+
+				>img{
+					width: 100%;
+					height: 100%;
+				}
+				.imageTitleCover{
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					padding: 0 3%;
+    				height: 6%;
+					background-color: rgba(0,0,0,0.5);
+
+					.imageTitle{
+					    color: #ffffff;
+					    font-weight: 600;
+					    float: left;
+					}
+
+					img{
+						float: right;
+					    margin-top: 1%;
+    					height: 60%;
+    					cursor: pointer;
+    					opacity: 0.6;
+
+    					&:hover{
+    						opacity:1;
+    					}
+					}
+				}
+			}
+
+		}
+	}
+
+	#paginator{
+		height: 60px;
+		border-top: solid 1px black;
+		padding: 0 50px;
+		ul{
+			list-style: none;
+
+			.active{
+                &:before {
+                  content: '';
+                  position: absolute;
+                  top: 23px;
+                  display: block;
+                  border-top: 2px solid #c41230;
+                  left: 0;
+                  right: 0;
+                }
+			}
+
+
+
+			li{
+				float: left;
+				margin:0 10px;
+				cursor: pointer;
+                position: relative;
+
+				@media screen and (max-height: 768px){
+					    margin: 0 5px;
+				}
+			}
+		}
+	}
+
+	.sliderControl{
+		font-size: 1.6vw;
+		position: absolute;
+		top: calc(45% - 25px);
+		cursor: pointer;
+		z-index: 10;
+
+		&:hover{
+			color: #bf0000;
+		}
+
+		&.left{
+		    left: 0.5%;
+		    width: 5%;
+		    height: 10%;
+		    background-size: contain;
+		    background-repeat: no-repeat;
+			background-image: url(../../../img/controll/button_previous.svg);
+
+			&:hover{
+				background-image: url(../../../img/controll/button_previous_hover.svg);
+			}
+
+		}
+		&.right{
+		    right: 0.5%;
+		    width: 5%;
+		    height: 10%;
+		    background-size: contain;
+		    background-repeat: no-repeat;
+			background-image: url(../../../img/controll/button_next.svg);
+
+			&:hover{
+				background-image: url(../../../img/controll/button_next_hover.svg);
+			}
+		}
+
+	}
+
+	#modal{
+		display: none;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0,0,0,0.6);
+		z-index: 999;
+
+		.modal-body{
+		    position: absolute;
+		    width: 50%;
+		    height: 90%;
+		    margin: 2.5% 0;
+		    left: 25%;
+		    top: 0;
+		    background-size: contain;
+		    background-repeat: no-repeat;
+		    background-position: center;
+
+			.close{
+				border-radius: 100%;
+				background-color: #ffffff;
+				height: 35px;
+				width: 35px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				text-align: center;
+				color: #000000;
+				font-weight: 600;
+				padding-top: 7px;
+				cursor: pointer;
+				font-size: 16px;
+
+				&:hover{
+					color: #c41230;
+				}
+			}
+		}
+	}
+}
