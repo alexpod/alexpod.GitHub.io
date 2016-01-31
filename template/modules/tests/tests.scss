@@ -37,6 +37,7 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
+		display: none;
 
 		&:hover{
 			background-image: url(../../../img/controll/testArrowBackHover.png);
@@ -54,6 +55,7 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
+		display: none;
 
 		&:hover{
 			background-image: url(../../../img/controll/scrollDownHover.png);
@@ -97,7 +99,7 @@
 			}
 
 			p{
-				font-size: 1.2em;
+				font-size: 0.8em;
 				margin: 0.4% 0;
 
 				&.testName{
@@ -123,7 +125,7 @@
 				    border: 2px solid #c41230;
 				    right: 0;
 					left: 2.1%;
-					top: 7%;
+					top: 6%;
 					width: 58.7%;
 					bottom: inherit;
 				}
@@ -175,12 +177,18 @@
 			text-align: left;
 			font-size: 18px;
 
+            p {
+                font-size: 1.333em;
+            }
+
 			h1{
 				text-align: left;
 			}
 			&.first{
 				h1{
 					text-align: center;
+                    font-size: 4em;
+                    font-weight: normal;
 				}
 			    padding-top: 15vh;
 			    text-align: center;
@@ -193,7 +201,9 @@
 		    	    	font-weight: bold;
 		    	    }
 		    	    &:last-of-type{
-	    	    	    padding: 0 35%;
+	    	    	    width: 644px;
+                        margin-left: auto;
+                        margin-right: auto;
 		    	    }
 			    }
 			}
@@ -202,8 +212,13 @@
 					text-align: center;
 					font-size: 3em;
 					font-weight: 300;
+                    &+p{
+                        width: 80%;
+                        margin-right: auto;
+                        margin-left: auto;
+                    }
 				}
-			    padding-top: 12%;
+			    padding-top: 5%;
 			    text-align: center;
 
 			    .imgContainer{
@@ -256,7 +271,7 @@
 					    padding: 0 5%;
 					    text-align: left;
 				        margin-left: 15%;
-					    height: 365px;
+					    height: 100%;
 					    width: 75%;
 					    background-color: rgba(0,0,0,0.5);
 					    font-size: 14px;
@@ -304,7 +319,7 @@
 			    padding: 10% 5% 0 5%;
 
 				h1{
-					font-size: 5em;
+					font-size: 4em;
 					font-weight: 300;
 					margin-top: 0;
 				}
@@ -320,7 +335,7 @@
 				padding: 10% 5% 0 5%;
 
 				h1{
-					font-size: 5em;
+					font-size: 4em;
 					font-weight: 300;
 					margin-top: 0;
 				}
@@ -333,83 +348,123 @@
 		}
 	}
 
+    #illustrationNature, #illustrationStyle, #illustrationText, #illustrationDetail{
+        .first {
+            .frame {
+                background: url('../../../img/tests/krylov/frame.png') 0 0 no-repeat;
+                margin-left: auto;
+                margin-right: auto;
+                background-size: contain;
+                width: 850px;
+                height: 504px;
+
+                h1 {
+                    margin: 0;
+                    padding-top: 123px;
+                    font-size: 3.333em;
+                    padding-bottom: 30px;
+                }
+
+                p {
+                    padding: 0 17%;
+                    font-size: 1.567em;
+                    margin-top: 0;
+                    margin-bottom: 10px;
+
+                    &.subtitle{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    #illustrationStyle, #illustrationText, #illustrationDetail{
+        .first {
+            .frame {
+                h1 {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
   #delphi{
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    height: 400vh
+    background-position: top center;
+    height: 400vh;
   }
 
   #athens{
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    height: 400vh
+    background-position: top center;
+    height: 400vh;
   }
 
   #korfu{
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     height: 400vh
   }
 
   #crete{
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     height: 400vh
   }
 
   #illustrationNature{
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     height: 300vh;
     color: black;
     @include illustrationTitle(37%);
   }
 
   #illustrationStyle{
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     height: 300vh;
     color: black;
     @include illustrationTitle(30%);
   }
 
   #illustrationText{
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     height: 300vh;
     color: black;
     @include illustrationTitle(30%);
   }
 
   #illustrationDetail{
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     height: 300vh;
     color: black;
     @include illustrationTitle(37%);
   }
 
   #fortunePeter{
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     height: 400vh;
     color: black;
     @include peterTitle(30%);
   }
 
   #euroDressPeter{
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     height: 400vh;
     color: black;
     @include peterTitle(30%);
@@ -418,16 +473,16 @@
   #SaintPetersburg{
     background-size: inherit;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     height: 400vh;
     color: black;
     @include peterTitle(30%);
   }
 
   #deathPeter{
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     height: 400vh;
     color: black;
     @include peterTitle(30%);
@@ -435,8 +490,71 @@
 
 }
 
+@media screen and (max-width:1300px) {
+    div#content{
+        height: calc(100% - 50px);
+    }
+    #tests {
+        #illustrationNature, #illustrationStyle, #illustrationText, #illustrationDetail{
+            .first {
+                .frame {
+                    background: url('../../../img/tests/krylov/frame.png') 0 0 no-repeat;
+                    margin-left: auto;
+                    margin-right: auto;
+                    background-size: contain;
+                    width: 550px;
+                    height: 325px;
 
+                    h1 {
+                        margin: 0;
+                        padding-top: 66px;
 
+                        font-size: 1.8em;
+                        padding-bottom: 10px;
+                    }
+
+                    p {
+                        padding: 0 17%;
+                        font-size: 1.000em;
+                    }
+                }
+            }
+        }
+
+    }
+    #menu{
+        height: 50px;
+        #mainMenu{
+            .breadcrumbs{
+                font-size: 12px;
+
+                .divider{
+                    margin: 0 5px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:1301px) {
+    #tests {
+        #illustrationNature, #illustrationStyle, #illustrationText, #illustrationDetail{
+            .first {
+                .frame {
+                    h1 {
+                        padding-top: 93px;
+                        padding-bottom: 6px;
+                    }
+
+                    p {
+
+                    }
+                }
+            }
+        }
+
+    }
+}
 
 
 @media screen and (max-height:900px) {
@@ -484,10 +602,6 @@
   				}
   			}
   		}
-
-		#delphi, #athens, #korfu, #crete{
-			/*height: 3072px;*/
-		};
 		#illustrationNature, #illustrationStyle, #illustrationText, #illustrationDetail{
 			/*height: 2304px;*/
 
@@ -503,9 +617,6 @@
 				    }
 				}
 			}
-		};
-		#fortunePeter, #euroDressPeter, #SaintPetersburg, #deathPeter{
-			/*height: 3072px;*/
 		};
 
 		>div.finishTest{
@@ -527,9 +638,6 @@
   		>div{
   			section{
 		  		font-size: 0.7em;
-  				&.questions{
-  					padding-top: 0%;
-  				}
   			}
 
   			&.finishTest ul {
@@ -550,7 +658,7 @@
 				    margin-bottom: 0%;
 
 				    &.question{
-				    	margin-top: 6.5%;
+//				    	margin-top: 6.5%;
 				    }
 				}
 			}
@@ -571,9 +679,7 @@
 				    }
 				}
 			}
-		};
-		#fortunePeter, #euroDressPeter, #SaintPetersburg, #deathPeter{
-			/*height: 2645px;*/
+
 		};
 
 		>div.finishTest{

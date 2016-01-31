@@ -3,7 +3,7 @@
 #preloader{
     background-color: #fff;
     width: 100%;
-    z-index: 1000000000000000000;
+    z-index: 100;
     position: absolute;
     height: 100%;
 
@@ -113,11 +113,16 @@
       @include box-sizing(border-box);
     }
 
-    img {
+    .loader-image-1,.loader-image-2,.loader-image-3,.loader-image-4 {
       position: absolute;
       left: 0;
       top: -150px;
       display: none;
+      background-image: url('../../../img/controll/paint.png');
+      background-position: center;
+      background-size: contain;
+      height: 150px;
+      width: 150px;
     }
 
     .animate-0-25-a {

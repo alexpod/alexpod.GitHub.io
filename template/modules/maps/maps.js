@@ -65,18 +65,23 @@ define({
 
 	buildDonePoints: function(testName){
 		var data;
+		var self = this;
 		if(localStorage.tests){
 			data = JSON.parse(localStorage.tests);
 		}else{
 			data = this.tests;
 		}
 		data[testName].questions.forEach(function(item, i){
-			$("." +item.id + "").attr('data-id', item.id);
+			$(self.mapsHtml.find('.' +item.id)).attr('data-id', item.id);
 			if (item.status){
-				$("." +item.id + "").addClass("done");
-				$("img." +item.id + "").remove();
-				$("<img class=" + item.id + " src="+"/img/maps/pointDone.png"+">").appendTo(".done."+item.id+"");
-				$("img." +item.id + "").addClass("done");
+				$(self.mapsHtml.find('.' +item.id)).addClass("done");
+				$(self.mapsHtml.find('img.' +item.id)).remove();
+				var img = $('<img/>', {
+				    class: item.id,
+				    src: '/img/maps/pointDone.png'
+				});
+				$(img).appendTo(self.mapsHtml.find(".done."+item.id+""));
+				$(self.mapsHtml.find('img.' +item.id)).addClass("done");
 			}
 		});
 	},
@@ -84,7 +89,7 @@ define({
 	refreshPoints: function(){
 		"use strict";
 		var self = this;
-		var points = $("a.done");
+		var points = $(self.mapsHtml.find("a.done"));
 
 		_.each(points, function(item, i){
 
@@ -92,11 +97,11 @@ define({
 			$(item).removeClass('done');
 
 			function imgGenerator(src,className,id){
-				var img = document.createElement("img");
-
-				$(img).attr('src', src);
-				$(img).attr('data-id', id);
-				$(img).addClass(className);
+				var img = $('<img/>', {
+				    class: className,
+				    src: src,
+				    dataId: id
+				});
 
 				return img
 			};
@@ -199,20 +204,20 @@ define({
 	},
 
 	animateShip: function (){
-		console.log("animateShip");
+		//console.log("animateShip");
 		var self = this;
 		function moveRight(){
 
-				self.content.find("img.ship").remove();
-				$(new Image()).attr('src', '' + "/img/maps/antiq/shipRight.png").addClass('ship').appendTo($('.shipContainer'));
-				self.content.find('.shipContainer').removeClass("ship-move-left");
-			  self.content.find('.shipContainer').addClass("ship-move-right");
+			self.content.find("img.ship").remove();
+			$(new Image()).attr('src', '' + "/img/maps/antiq/shipRight.png").addClass('ship').appendTo($('.shipContainer'));
+			self.content.find('.shipContainer').removeClass("ship-move-left");
+		  	self.content.find('.shipContainer').addClass("ship-move-right");
 		};
 		function moveLeft(){
-				self.content.find("img.ship").remove();
-				$(new Image()).attr('src', '' + "/img/maps/antiq/shipLeft.png").addClass('ship').appendTo($('.shipContainer'));
-				self.content.find('.shipContainer').removeClass("ship-move-right");
-			  self.content.find('.shipContainer').addClass("ship-move-left");
+			self.content.find("img.ship").remove();
+			$(new Image()).attr('src', '' + "/img/maps/antiq/shipLeft.png").addClass('ship').appendTo($('.shipContainer'));
+			self.content.find('.shipContainer').removeClass("ship-move-right");
+		  	self.content.find('.shipContainer').addClass("ship-move-left");
 		};
 
 

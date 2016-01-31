@@ -132,6 +132,8 @@ define({
 		$('#tests').addClass('active').animate({ "left": "0" }, 1200 );
 		setTimeout(function(){
         	$("html,body").css("overflow-y","scroll");
+        	$(self.testsHtml.find('.goBackButton')).css('display','block');
+        	$(self.testsHtml.find('.goNext')).css('display','block');
         },1200);
 
 		self.showNextBlock(questionName);

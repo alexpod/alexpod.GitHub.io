@@ -14,9 +14,6 @@ define({
 		this.on('Preload:End', self.startVideo);
 		var scene = self.content.find('#scene');
 		var parallax = new Parallax(scene[0]);
-	},
-	startVideo: function(){
-		var self = this;
 		var videobackground = new $.backgroundVideo($('#video'), {
 	      "align": "centerXY",
 	      "width": 1920,
@@ -24,10 +21,13 @@ define({
 	      "path": "video/",
 	      "filename": "startVideo",
 	      "types": ["mp4"],
-	      "preload": false,
+	      "preload": true,
 	      "autoplay": false,
 	      "loop": false
 	    });
+	},
+	startVideo: function(){
+		var self = this;
 		var video = document.getElementById('video_background');
 		var closeVideo = document.getElementById('closeVideo');
 		var scene = document.getElementById('scene');

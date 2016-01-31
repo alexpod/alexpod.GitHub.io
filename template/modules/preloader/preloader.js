@@ -54,13 +54,13 @@ define({
 			tests;
 		function checkStore(){
 			if(localStorage.getItem('maps')){
-				console.log("localStorage");
+//				console.log("localStorage");
 				maps = JSON.parse(localStorage.getItem('maps'));
 				maps = maps.maps.maps;
 				tests = JSON.parse(localStorage.getItem('tests'));
 				
-				console.log("maps",maps);
-				console.log("tests",tests);
+				// console.log("maps",maps);
+				// console.log("tests",tests);
 
 				cycle();
 			}else {
@@ -101,7 +101,7 @@ define({
 
 		function cycle(){
 
-			console.log("cycle", maps,tests)
+			//console.log("cycle", maps,tests)
 			maps.forEach(function(map){
 				if(map.mapImage){
 					preloadImage(map.mapImage);
@@ -119,8 +119,6 @@ define({
 		function preloadImage(url){
 		    var img=new Image();
 		    img.src=url;
-
-		    console.log(img);
 		}
 	}
 });

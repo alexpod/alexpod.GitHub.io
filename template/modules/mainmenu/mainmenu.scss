@@ -154,9 +154,9 @@
 			}
 		}
 		.rightSide {
-			white-space: nowrap;
-			box-sizing: border-box;
-			.selectSection{
+				white-space: nowrap;
+				box-sizing: border-box;
+				.selectSection{
 				display: none;
 				position: absolute;
 			    bottom: 103px;
@@ -168,7 +168,7 @@
 				background-image: url(../../../img/controll/plashka.png);
 				background-repeat: no-repeat;
 				&.reloadButton{
-					right: 342px;
+					right: 278px;
 					display: block;
 				}
 				&.turnOfSound{
@@ -210,6 +210,60 @@
 			color: #333333;
 		}
 	}
+}
+@media screen and (max-width:1300px) {
+    ul.accordion {
+        li {
+            float: left;
+            width: 70px;
+            background-position: 18px 5%;
+            background-size: 53%;
+            >p {
+                font-size: 1.3em;
+                bottom: 647px;
+            }
+            &.active {
+                width: calc(100% - 140px);
+                background-position: 18px 5%;
+                background-size: 4%;
+
+            }
+            div.image {
+                margin-left: 70px;
+            }
+        }
+
+    }
+    #menu{
+        height: 50px;
+        #mainMenu {
+            height: 50px;
+            .breadcrumbs {
+                font-size: 12px;
+                .divider {
+                    margin: 0 5px;
+                    font-size: 14px;
+                }
+            }
+            .leftSide {
+                >.icon {
+                    cursor: pointer;
+                    padding: 0px 22px;
+                    >div {
+                        width: 3.7vh;
+                        height: 0.4vh;
+                    }
+                }
+            }
+            td {
+                button {
+                    height: 60px;
+                    font-size: 12px;
+                    padding: 0px 20px;
+                }
+            }
+        }
+    }
 }
 @media screen and (max-height:900px) {
 	#menu #mainMenu .breadcrumbs{
