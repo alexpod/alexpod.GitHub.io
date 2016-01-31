@@ -17,7 +17,7 @@
 				border: 0;
 				min-width: 98px;
 				border-right: 1px solid #717171;
-				height: 73px;
+				height: 84px;
 				cursor: pointer;
 				vertical-align: top;
 				color: #999;
@@ -161,15 +161,141 @@
 				position: absolute;
 			    bottom: 103px;
 			    color: #fff;
-			    width: 239px;
-			    height: 100px;
+                width: 239px;
+                height: 100px;
 			    z-index: 999;
 			    text-align: center;
 				background-image: url(../../../img/controll/plashka.png);
 				background-repeat: no-repeat;
+                .reloadWrapper {
+                    display: none;
+                }
 				&.reloadButton{
 					right: 278px;
 					display: block;
+                    width: 329px;
+                    height: auto;
+                    >p,>a {
+                        display: none;
+                    }
+                    .reloadWrapper {
+                        display: block;
+                        padding: 30px;
+                        text-align: left;
+                        font-size: 14px;
+                        white-space: normal;
+                        .reloadContent {
+                            .progress-title {
+                                margin-bottom: 5px;
+                                display: block;
+                            }
+                            .progress {
+                                background-color: #717171;
+                                margin-bottom: 9px;
+                                .progress-bar {
+                                    background-color: #C41230;
+                                    height: 4px;
+                                }
+                            }
+                            .points {
+                                margin-bottom: 10px;
+                                span {
+                                    position: relative;
+                                    display: inline-block;
+                                    background: url('../../../img/controll/point.png') 0 0 no-repeat;
+                                    width: 29px;
+                                    height: 28px;
+                                    text-align: center;
+                                    line-height: 28px;
+                                    margin: 0 5px;
+                                    &.info:after {
+                                        background: url('../../../img/controll/ico-help.png') 0 0 no-repeat;
+                                        width: 17px;
+                                        height: 17px;
+                                        position: absolute;
+                                        right: -13px;
+                                        top: 6px;
+                                        content: '';
+                                        display: block;
+                                    }
+                                }
+                                &.points-active {
+                                    padding-bottom: 65px;
+                                }
+                            }
+                            .status {
+                                margin-bottom: 10px;
+                                width: 243px;
+                                height: 127px;
+                                position: relative;
+                                margin-bottom: 10px;
+                                .status-title {
+                                    background: #C41230;
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    right: 0;
+                                    height: 28px;
+                                    line-height: 28px;
+                                    padding-left: 10px;
+                                }
+                                span {
+                                    text-transform: uppercase;
+                                    font-weight: bold;
+                                    margin-left: 10px;
+                                }
+                            }
+                            .description {
+
+                                margin-bottom: 14px;
+                                padding-bottom: 5px;
+                                color:#f4f4f4;
+                            }
+                            .share {
+                                border-top: 1px solid #838383;
+                                border-bottom: 1px solid #838383;
+                                padding-top: 20px;
+                                margin-bottom: 13px;
+                                padding-bottom: 18px;
+                                &:after {
+                                    content: '';
+                                    width: 100%;
+                                    clear: both;
+                                    display: block;
+                                }
+                                span {
+                                    float: left;
+                                    text-transform: uppercase;
+                                }
+                                a {
+                                    float: right;
+                                    padding: 0;
+                                    height: auto;
+                                    background:transparent;
+                                    width: auto;
+                                    margin: 0 0 0 11px;
+                                }
+
+                            }
+
+                            .btn {
+                                text-decoration: none;
+                                color: #fff;
+                                text-transform: uppercase;
+                                background: #000;
+                                width: 100%;
+                                margin: 0;
+                                text-align: center;
+                                height: 38px;
+                                line-height: 38px;
+                                padding: 0;
+                                &:hover {
+                                    background: #fff;
+                                    color: #000;
+                                }
+                            }
+                        }
+                    }
 				}
 				&.turnOfSound{
 					right: 240px;
@@ -212,6 +338,19 @@
 	}
 }
 @media screen and (max-width:1300px) {
+    #menu {
+        #mainMenu {
+            .rightSide {
+                .selectSection {
+                    bottom: 50px;
+                    &.reloadButton {
+                        right: 213px;
+                    }
+                }
+
+            }
+        }
+    }
     ul.accordion {
         li {
             float: left;

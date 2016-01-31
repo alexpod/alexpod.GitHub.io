@@ -27,11 +27,41 @@
 		</td>
 		<td class="breadcrumbs"></td>
 		<td class="rightSide">
-			<div class="selectSection">
-				<p>Обнулить результат?</p>
-				<a data-id="succesMenuButton" id="succesMenuButton">Да</a>
-				<a data-id="revertMenuButton" id="revertMenuButton">Нет</a>
-			</div>
+            <div class="selectSection">
+                <p>Обнулить результат?</p>
+                <div class="reloadWrapper">
+                    <div class="reloadContent">
+                        <span class="progress-title">Вы прошли игру на 100%</span>
+                        <div class="progress">
+                            <div class="progress-bar"  style="width:100%"></div>
+                        </div>
+                        <div class="points">
+                            Набрали <span>36</span> баллов
+                        </div>
+                        <div class="points points-active" style="display: none">
+                            Набрали <span>12</span> баллов из <span class="info">36</span>
+                        </div>
+                        <div class="description">
+                            <span>Вы отлично разбираетесь в творчестве Серова!</span>
+                        </div>
+                        <div class="status">
+                            <img src="img/controll/photo-1.jpg">
+                            <div class="status-title">Ваш статус: <span>УЧИТЕЛЬ</span></div>
+                        </div>
+
+                        <div class="share">
+                            <span>Поделиться:</span>
+                            <a href="#"><img src="img/controll/ico-tw.png" alt=""/></a>
+                            <a href="#"><img src="img/controll/ico-fb.png" alt=""/></a>
+                            <a href="#"><img src="img/controll/ico-vk.png" alt=""/></a>
+                        </div>
+
+                        <a href="#" class="btn">Обнулить результат</a>
+                    </div>
+                </div>
+                <a data-id="succesMenuButton" id="succesMenuButton">Да-</a>
+                <a data-id="revertMenuButton" id="revertMenuButton">Нет</a>
+            </div>
 			<button data-id="reloadButton" id="reloadButton">
 				<img data-id="reloadButton" src="img/controll/reload.png">
 			</button>
