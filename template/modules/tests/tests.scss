@@ -500,7 +500,7 @@
                     margin-right: auto;
                     margin-top: 0;
                 }
-                @media screen and (max-width: 1300px) {
+                @media screen and (max-width: 1600px) {
                     .text {
                         width: 600px;
                     }
@@ -516,7 +516,7 @@
     #fortunePeter, #euroDressPeter, #SaintPetersburg, #deathPeter,
     #delphi, #athens, #korfu, #crete {
         section {
-            @media screen and (max-width: 1300px) {
+            @media screen and (max-width: 1600px) {
                 .frame {
                     p:last-of-type {
                         width: 344px;
@@ -533,7 +533,7 @@
     #illustrationNature, #illustrationStyle, #illustrationText, #illustrationDetail,
     #delphi, #athens, #korfu, #crete {
         section {
-            @media screen and (max-width: 1300px) {
+            @media screen and (max-width: 1600px) {
                 &.first p,
                 &.first p.subtitle,
                 p {
@@ -568,7 +568,7 @@
 
 }
 
-@media screen and (max-width:1300px) {
+@media screen and (max-width:1600px) {
     div#content{
         height: calc(100% - 50px);
     }
@@ -632,7 +632,7 @@
         }
     }
 }
-@media screen and (min-width:1301px) {
+@media screen and (min-width:1601px) {
     #tests {
         #illustrationNature, #illustrationStyle, #illustrationText, #illustrationDetail{
             .first {
