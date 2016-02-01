@@ -358,6 +358,7 @@
                 background-size: contain;
                 width: 850px;
                 height: 504px;
+                padding: 0 100px;
 
                 h1 {
                     margin: 0;
@@ -593,6 +594,7 @@
                     background-size: contain;
                     width: 550px;
                     height: 325px;
+                    padding: 0 80px;
 
                     h1 {
                         margin: 0;
@@ -603,7 +605,7 @@
                     }
 
                     p {
-                        padding: 0 17%;
+                        padding: 0;
                         font-size: 1.000em;
                         margin-bottom: 0;
                         width: auto;
@@ -645,6 +647,11 @@
                     p {
 
                     }
+                }
+            }
+            section{
+                .left, .right {
+                    padding: 20% 5% 0;
                 }
             }
         }
