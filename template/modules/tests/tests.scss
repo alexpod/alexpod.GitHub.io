@@ -389,105 +389,182 @@
         }
     }
 
-  #delphi{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 400vh;
-  }
+    #delphi{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 400vh;
+    }
 
-  #athens{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 400vh;
-  }
+    #athens{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 400vh;
+    }
 
-  #korfu{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 400vh
-  }
+    #korfu{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 400vh
+    }
 
-  #crete{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 400vh
-  }
+    #crete{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 400vh
+    }
 
-  #illustrationNature{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 300vh;
-    color: black;
-    @include illustrationTitle(37%);
-  }
+    #illustrationNature{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 300vh;
+        color: black;
+        @include illustrationTitle(37%);
+    }
 
-  #illustrationStyle{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 300vh;
-    color: black;
-    @include illustrationTitle(30%);
-  }
+    #illustrationStyle{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 300vh;
+        color: black;
+        @include illustrationTitle(30%);
+    }
 
-  #illustrationText{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 300vh;
-    color: black;
-    @include illustrationTitle(30%);
-  }
+    #illustrationText{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 300vh;
+        color: black;
+        @include illustrationTitle(30%);
+    }
 
-  #illustrationDetail{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 300vh;
-    color: black;
-    @include illustrationTitle(37%);
-  }
+    #illustrationDetail{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 300vh;
+        color: black;
+        @include illustrationTitle(37%);
+    }
 
-  #fortunePeter{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 400vh;
-    color: black;
-    @include peterTitle(30%);
-  }
+    #fortunePeter{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 400vh;
+        color: black;
+        @include peterTitle(30%);
+    }
 
-  #euroDressPeter{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 400vh;
-    color: black;
-    @include peterTitle(30%);
-  }
+    #euroDressPeter{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 400vh;
+        color: black;
+        @include peterTitle(30%);
+    }
 
-  #SaintPetersburg{
-    background-size: inherit;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 400vh;
-    color: black;
-    @include peterTitle(30%);
-  }
+    #SaintPetersburg{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 400vh;
+        color: black;
+        @include peterTitle(30%);
+    }
 
-  #deathPeter{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    height: 400vh;
-    color: black;
-    @include peterTitle(30%);
-  }
+    #deathPeter{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 400vh;
+        color: black;
+        @include peterTitle(30%);
+    }
+    #delphi, #athens, #korfu, #crete{
+        section {
+            .frame {
+                h1 {
+                    margin-top: 0;
+                }
+                .text {
+                    width: 700px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 0;
+                }
+                @media screen and (max-width: 1300px) {
+                    .text {
+                        width: 600px;
+                    }
+                    p:last-of-type {
+                        width: 344px;
+                    }
+                }
+
+            }
+
+        }
+    }
+    #fortunePeter, #euroDressPeter, #SaintPetersburg, #deathPeter,
+    #delphi, #athens, #korfu, #crete {
+        section {
+            @media screen and (max-width: 1300px) {
+                .frame {
+                    p:last-of-type {
+                        width: 344px;
+                        position: absolute;
+                        bottom: 120px;
+                        margin: 0;
+                        left: calc(50% - 172px);
+                    }
+                }
+            }
+        }
+    }
+    #fortunePeter, #euroDressPeter, #SaintPetersburg, #deathPeter,
+    #illustrationNature, #illustrationStyle, #illustrationText, #illustrationDetail,
+    #delphi, #athens, #korfu, #crete {
+        section {
+            @media screen and (max-width: 1300px) {
+                &.first p,
+                &.first p.subtitle,
+                p {
+                    font-size: 0.95em;
+                }
+                h1,
+                &.first h1,
+                &.bloks .left h1,
+                &.bloks .right h1 {
+                    font-weight: 300;
+                    font-size: 2em;
+                    margin-top: 0;
+                    margin: .17em 0;
+                }
+                &.questions {
+                    .answers {
+                        .imgContainer {
+                            .img {
+                                overflow: hidden;
+                                margin: auto;
+                                img {
+                                    width: auto;
+                                    margin-left: -39px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 }
 
@@ -496,6 +573,17 @@
         height: calc(100% - 50px);
     }
     #tests {
+        section {
+            p {
+                font-size: 0.95em;
+            }
+            h1 {
+                font-weight: 300;
+                font-size: 2em;
+                margin-top: 0;
+                margin: .17em 0;
+            }
+        }
         #illustrationNature, #illustrationStyle, #illustrationText, #illustrationDetail{
             .first {
                 .frame {
@@ -517,7 +605,14 @@
                     p {
                         padding: 0 17%;
                         font-size: 1.000em;
+                        margin-bottom: 0;
+                        width: auto;
                     }
+                }
+            }
+            section{
+                .left, .right {
+                    padding: 20% 5% 0;
                 }
             }
         }
@@ -613,9 +708,6 @@
 				p{
 				    font-size: 1.2em;
 
-				    &.question{
-				    	margin-top: 6.5%;
-				    }
 				}
 			}
 		};
