@@ -613,6 +613,12 @@
             section{
                 .left, .right {
                     padding: 20% 5% 0;
+                    img{
+                        width: 80%;
+                    }
+                }
+                &.bloks {
+                    min-height: 700px;
                 }
             }
         }
@@ -751,10 +757,6 @@
 				p{
 				    font-size: 1.2em;
 				    margin-bottom: 0%;
-
-				    &.question{
-//				    	margin-top: 6.5%;
-				    }
 				}
 			}
 		};
@@ -768,10 +770,6 @@
 				}
 				p{
 				    font-size: 1.2em;
-
-				    &.question{
-				    	margin-top: 6.5%;
-				    }
 				}
 			}
 
