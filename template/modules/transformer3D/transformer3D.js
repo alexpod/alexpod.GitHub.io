@@ -9,6 +9,17 @@ define({
 		this.transformer3DHtml.find('.topSide').html(pages[1]);
 		this.transformer3DHtml.find('.bottomSide').html(pages[2]);
 		this.transformer3DHtml.find('.backSide').html(pages[3]);
+		function setTransition(){
+			self.transformer3DHtml.find('figure').css({ 
+				WebkitTransition : 'transform 1s',
+			    MozTransition    : 'transform 1s',
+			    MsTransition     : 'transform 1s',
+			    OTransition      : 'transform 1s',
+			    transition       : 'transform 1s'
+		    });
+		}
+
+		setTimeout(setTransition,1000);
 	},
 	goTop: function(){
 		this.transformer3DHtml.find('#cube').removeClass();

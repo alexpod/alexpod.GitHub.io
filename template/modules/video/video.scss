@@ -4,8 +4,44 @@
   	top: 0;
 	position: absolute;
 	background-color: #ffffff;
-	font-size: 1.8vh;
+	/*font-size: 1.8vh;*/
+	font-size: 16px;
 	
+	&#video-history{
+		.circle.bottom {
+			right: 10%;
+		    bottom: 20px;
+		    /*
+			height: 400px;
+		    width: 400px;
+			*/
+			width: 550px;
+			height: 550px;
+		}
+	}
+	
+	&#video-story{
+		.circle.bottom {
+			width: 480px;
+			height: 480px;
+		}
+	}
+	
+	&#video-antiq{
+		.circle.bottom {
+			width: 450px;
+			height: 450px;
+		}
+	}
+	
+	&#video-history{
+		.circle.bottom {
+			width: 490px;
+			height: 490px;
+		}
+	}
+	
+	/*
 	&#video-history{
 		.circle.bottom {
 		    right: 10%;
@@ -19,6 +55,7 @@
 			}
 	    }
 	}
+
 	&#video-antiq{
 	    @media screen and (max-height:768px) {
 	    	.circle.bottom {
@@ -35,7 +72,8 @@
 			}
 	    }
 	}
-
+	*/
+	
 	video{
 		position:fixed;
 		top:0;
@@ -68,12 +106,19 @@
     		width: 610px;
     		z-index: 20;
 
-		    @media screen and (max-height:600px) {
+		    @media screen and (max-width:1400px) {
 			    right: 10%;
 			    bottom: 20px;
-			    height: 70vh;
+			    /*
+				height: 70vh;
 			    width: 35vw;
+				*/
+				width:450px;
+				height:450px;
+				/*font-size:13px;*/
+				font-size:16px;
 		    }
+
 
 		  p{
 		    padding: 5% 15% 0;
@@ -111,8 +156,8 @@
 
 
         &.goFront{
-            top: 1%;
-            left: calc(50% - 77px);
+            top: 15%;
+            left: calc(50% - 52px);
         }
         &.goTest{
 			bottom: 5%;

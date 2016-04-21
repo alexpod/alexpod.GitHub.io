@@ -1,5 +1,5 @@
-@import "../../../scss/partials/mixins/illustrationTitle.scss";
-@import "../../../scss/partials/mixins/peterTitle.scss";
+@import "./../../../scss/partials/mixins/illustrationTitle.scss";
+@import "./../../../scss/partials/mixins/peterTitle.scss";
 
 #tests{
 	height:auto;
@@ -16,7 +16,7 @@
 	.soundTestButton{
 	    position: absolute;
 	    top: 5vh;
-	    left: 2%;
+	    right: 2%;
 	    height: 65px;
 	    width: 65px;
 	    z-index: 99;
@@ -33,14 +33,14 @@
 		width: 88px;
 		cursor: pointer;
 		z-index: 22;
-		background-image: url(../../../img/controll/testArrowBack.png);
+		background-image: url(./../../../img/controll/testArrowBack.png);
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
 		display: none;
 
 		&:hover{
-			background-image: url(../../../img/controll/testArrowBackHover.png);
+			background-image: url(./../../../img/controll/testArrowBackHover.png);
 		}
 	}
 	.goNext{
@@ -51,18 +51,18 @@
 		width: 100px;
 		cursor: pointer;
 		z-index: 22;
-		background-image: url(../../../img/controll/scrollDown.png);
+		background-image: url(./../../../img/controll/scrollDown.png);
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
 		display: none;
 
 		&:hover{
-			background-image: url(../../../img/controll/scrollDownHover.png);
+			background-image: url(./../../../img/controll/scrollDownHover.png);
 		}
 	}
 
-	>div{
+	.test-wraper>div{
 		position: absolute;
 		height: 100%;
 		width: 100%;
@@ -220,6 +220,23 @@
 			    padding-top: 5%;
 			    text-align: center;
 
+			    .complete{
+			    	.imgContainer{
+	    				pointer-events: none;
+	    				cursor: none;
+			    		.img{
+			    			&:hover:not(.active){
+				    			a{
+								    display: none;
+				    			}
+				    			img{
+				    				opacity:0.5;
+				    			}
+				    		}
+			    		}
+			    	}
+			    }
+
 			    .imgContainer{
 			    	position: relative;
 			    	display: inline-block;
@@ -235,7 +252,7 @@
 			    			}
 			    		}
 			    		a{
-		    			    background-image: url(../../../img/tests/y.png);
+		    			    background-image: url(./../../../img/tests/y.png);
 						    width: 71px;
 						    height: 71px;
 						    position: absolute;
@@ -249,7 +266,7 @@
 							    display: block;
 
 							    &:hover{
-							    	background-image: url(../../../img/tests/yHover.png);
+							    	background-image: url(./../../../img/tests/yHover.png);
 							    }
 			    			}
 			    			img{
@@ -273,12 +290,15 @@
 					    width: 100%;
 					    background-color: rgba(0,0,0,0.5);
 					    font-size: 14px;
-					    background-image: url(../../../img/tests/answer_hover.png);
+					    background-image: url(./../../../img/tests/answer_hover.png);
 				        background-repeat: no-repeat;
     					background-size: cover;
 
+    					&.rightHover{
+    						background-color: rgba(0,0,0,0);
+    					}
 					    i{
-				    	    background-image: url(../../../img/tests/x.png);
+				    	    background-image: url(./../../../img/tests/x.png);
 						    background-repeat: no-repeat;
 						    width: 56px;
 						    height: 55px;
@@ -349,7 +369,7 @@
         background-color: #e5d5b2;
         .first {
             .frame {
-                background: url('../../../img/tests/krylov/frame.png') 0 0 no-repeat;
+                background: url('./../../../img/tests/krylov/frame.png') 0 0 no-repeat;
                 margin-left: auto;
                 margin-right: auto;
                 background-size: contain;
@@ -587,7 +607,7 @@
         #illustrationNature, #illustrationStyle, #illustrationText, #illustrationDetail{
             .first {
                 .frame {
-                    background: url('../../../img/tests/krylov/frame.png') 0 0 no-repeat;
+                    background: url('./../../../img/tests/krylov/frame.png') 0 0 no-repeat;
                     margin-left: auto;
                     margin-right: auto;
                     background-size: contain;
@@ -740,13 +760,6 @@
 }
 @media screen and (max-height:660px) {
   	#tests {
-  		>div{
-
-  			&.finishTest ul {
-  				height: 345px;
-  			}
-  		}
-
 		#delphi, #athens, #korfu, #crete{
 			/*height: 2400px;*/
 
@@ -775,28 +788,29 @@
 			}
 
 		};
+        .test-wraper {
+            > div.finishTest {
+                height: 100vh;
 
-		>div.finishTest{
 
-			height: 100vh;
+                h1 {
+                    font-size: 1.5em;
+                }
 
-			h1{
-    			font-size: 1.5em;
-			}
+                ul {
+                    height: 345px;
+                    margin-bottom: -15px;
+                    &:before {
+                        left: 2.9%;
+                        width: 58.4%;
+                        top: 5%;
+                    }
 
-			ul{
-
-			    margin-bottom: -15px;
-				&:before{
-				    left: 2.9%;
-				    width: 58.4%;
-				    top: 5%;
-				}
-
-				li{
-					height: 75%;
-				}
-			} 
-		}
+                    li {
+                        height: 75%;
+                    }
+                }
+            }
+        }
 	}
 }

@@ -3,19 +3,13 @@ define({
 		var self = this;
 		this.loadMap("maps");
 
-		// self.on('Test:Loaded', function(testName) {
-		// 	this.buildDonePoints(testName);
-		// });
-
-		self.on('Map:Loaded', function() {
-			this.subscribeMap();
-			this.animatePoints();
-			this.animateShip();
-		});
-
 		return this.mapsHtml;
 	},
-
+	mapLoaded: function() {
+		this.subscribeMap();
+		this.animatePoints();
+		this.animateShip();
+	},
 	printMap : function (mapName) {
 		var self = this;
 		self.content.find(".maps").removeClass("active");
@@ -24,6 +18,8 @@ define({
 		if(mapName === 'antiq'){
 			self.animateClouds();
 		}
+		
+		$(document).setPoints('setProportion');
 	},
 
 	loadMap : function(mapName){
@@ -31,7 +27,7 @@ define({
 		var myStorage = localStorage;
 		self.maps = {};
 		require([
-			'text!../../../content/maps/' + mapName + '.json'
+			'text!./../../../serov/content/maps/' + mapName + '.json'
 		], function(json) {
 			self.maps[mapName] = JSON.parse(json);
 			if(myStorage.getItem("maps")){
@@ -50,8 +46,9 @@ define({
 			myStorage.setItem("maps",JSON.stringify(self.maps));
 		};
 		self.mapsHtml.html(page);
-		self.trigger('Map:Loaded');
+		self.mapLoaded();
 		self.subscribeMap();
+		self.buildDonePoints();
 	},
 
 	subscribeMap: function() {
@@ -63,26 +60,23 @@ define({
 	},
 
 
-	buildDonePoints: function(testName){
+	buildDonePoints: function(){
 		var data;
 		var self = this;
 		if(localStorage.tests){
 			data = JSON.parse(localStorage.tests);
 		}else{
-			data = this.tests;
+			data = this.tests.data;
 		}
-		data[testName].questions.forEach(function(item, i){
-			$(self.mapsHtml.find('.' +item.id)).attr('data-id', item.id);
-			if (item.status){
-				$(self.mapsHtml.find('.' +item.id)).addClass("done");
-				$(self.mapsHtml.find('img.' +item.id)).remove();
-				var img = $('<img/>', {
-				    class: item.id,
-				    src: '/img/maps/pointDone.png'
-				});
-				$(img).appendTo(self.mapsHtml.find(".done."+item.id+""));
-				$(self.mapsHtml.find('img.' +item.id)).addClass("done");
-			}
+		_.each(data, function(key){
+			key.questions.forEach(function(item, i){
+				$(self.mapsHtml.find('.' +item.id)).attr('data-id', item.id);
+				if (item.status){
+					$(self.mapsHtml.find('.' +item.id)).addClass("done");
+					$(self.mapsHtml.find('img.' +item.id)).attr('src', './img/maps/pointDone.png');
+					$(self.mapsHtml.find('img.' +item.id)).addClass("done");
+				}
+			});
 		});
 	},
 
@@ -105,7 +99,7 @@ define({
 
 				return img
 			};
-			$(item).empty().append(imgGenerator("../../img/maps/pointStart.png","point pointStart " + id,id),imgGenerator("../../img/controll/point.svg","point pointFinish animatePoint " + id,id));
+			$(item).empty().append(imgGenerator("./../../img/maps/pointStart.png","point pointStart " + id,id),imgGenerator("./../../img/controll/point.svg","point pointFinish animatePoint " + id,id));
 			self.subscribeMap();
 		});
 	},
@@ -123,31 +117,31 @@ define({
 
 		function getRandomInteger(min, max) {
 	    	var rand = min - 0.5 + Math.random() * (max - min + 1)
-	    	rand = Math.round(rand);
+	    	//rand = Math.round(rand);
 	    	return rand;
 		}
 
 		function moveElementTowards (element, direction){
 			switch (direction){
 				case 'left':
-					self.content.find(element).css("top", getRandomInteger(1, 70) + "%");
-					self.content.find(element).css("left", getRandomInteger(100, 140) + "%");
-					self.content.find(element).addClass("move-left");
+					$(element).css("top", getRandomInteger(1, 70) + "vh");
+					$(element).css("left", getRandomInteger(100, 140) + "vw");
+					$(element).addClass("move-left");
 					break;
 				case 'right':
-					self.content.find(element).css("top", getRandomInteger(1, 70) + "%");
-					self.content.find(element).css("left", -getRandomInteger(10, 40) + "%");
-					self.content.find(element).addClass("move-right");
+					$(element).css("top", getRandomInteger(1, 70) + "vh");
+					$(element).css("left", -getRandomInteger(10, 40) + "vw");
+					$(element).addClass("move-right");
 					break;
 				case 'up':
-					self.content.find(element).css("top", getRandomInteger(110, 130) + "%");
-					self.content.find(element).css("left", getRandomInteger(1, 80) + "%");
-					self.content.find(element).addClass("move-up");
+					$(element).css("top", getRandomInteger(110, 130) + "vh");
+					$(element).css("left", getRandomInteger(1, 80) + "vw");
+					$(element).addClass("move-up");
 				break;
 				case 'down':
-					self.content.find(element).css("top", -getRandomInteger(40, 60) + "%");
-					self.content.find(element).css("left", getRandomInteger(1, 80) + "%");
-					self.content.find(element).addClass("move-down");
+					$(element).css("top", -getRandomInteger(40, 60) + "vh");
+					$(element).css("left", getRandomInteger(1, 80) + "vw");
+					$(element).addClass("move-down");
 				break;
 			}
 		}
@@ -165,7 +159,7 @@ define({
 		var self = this;
 		function zoomIn(map){
 
-			[].forEach.call($(self.content.find(".active .animatePoint")),function(element,counter){
+			[].forEach.call($(".active .animatePoint"),function(element,counter){
 					animate(element,counter);
 			});
 
@@ -182,13 +176,13 @@ define({
 		};
 
 		function zoomOut(){
-			  self.content.find(".animatePoint").css({
+			  $(".animatePoint").css({
 			  	"transform": "scale(0)"
 			  });
 		};
 
 		function showPoint(){
-			  self.content.find(".animatePoint").css({
+			  $(".animatePoint").css({
 			  	"opacity": "1"
 			  });
 		};
@@ -209,24 +203,25 @@ define({
 		function moveRight(){
 
 			self.content.find("img.ship").remove();
-			$(new Image()).attr('src', '' + "/img/maps/antiq/shipRight.png").addClass('ship').appendTo($('.shipContainer'));
+			$(new Image()).attr('src',"./img/maps/antiq/shipRight.png").addClass('ship').appendTo($('.shipContainer'));
 			self.content.find('.shipContainer').removeClass("ship-move-left");
 		  	self.content.find('.shipContainer').addClass("ship-move-right");
 		};
 		function moveLeft(){
 			self.content.find("img.ship").remove();
-			$(new Image()).attr('src', '' + "/img/maps/antiq/shipLeft.png").addClass('ship').appendTo($('.shipContainer'));
+			$(new Image()).attr('src', "./img/maps/antiq/shipLeft.png").addClass('ship').appendTo($('.shipContainer'));
 			self.content.find('.shipContainer').removeClass("ship-move-right");
 		  	self.content.find('.shipContainer').addClass("ship-move-left");
 		};
 
 
-		moveLeft();
+		setTimeout(moveLeft,3000);
+
 		var timerShip = setTimeout(function tick() {
 			moveRight();
-			setTimeout(moveLeft, 120000);
-			timerShip = setTimeout(tick, 240000);
-		}, 120000);
+			setTimeout(moveLeft, 90000);
+			timerShip = setTimeout(tick, 180000);
+		}, 90000);
 
 	}
 

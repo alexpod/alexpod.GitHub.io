@@ -4,48 +4,64 @@ define({
 
 		var preloader = this.renderPreloader();
 
-		$('body').html('').append(preloader, this.content);
+		$('#app').html('').append(preloader, this.content);
 		this.preloadImage(150);
 		this.subscribe();
 	},
 	subscribe: function() {
 		var self = this;
-
 		this.on('Preload:End', self.startVideo);
 		var scene = self.content.find('#scene');
 		var parallax = new Parallax(scene[0]);
+		var soundButton = $('#soundButton');
 		var videobackground = new $.backgroundVideo($('#video'), {
 	      "align": "centerXY",
 	      "width": 1920,
 	      "height": 1080,
-	      "path": "video/",
+	      "path": "./video/",
 	      "filename": "startVideo",
 	      "types": ["mp4"],
 	      "preload": true,
 	      "autoplay": false,
 	      "loop": false
 	    });
+	    		// Настройки звука
+		if(localStorage.getItem('sound')){
+			this.audioState = localStorage.getItem('sound');
+		}else{
+			localStorage.setItem('sound',true);
+		}
+
+		self.audioControll();
+		soundButton.on('click', function(){
+			self.audioSwictcher();
+		});
 	},
 	startVideo: function(){
 		var self = this;
-		var video = document.getElementById('video_background');
-		var closeVideo = document.getElementById('closeVideo');
-		var scene = document.getElementById('scene');
+		var audio = document.getElementById('audio');
+		var video = this.content.find('#video_background');
+		var closeVideo = this.content.find('#closeVideo');
+		var soundButton = $('#soundButton');
+		var scene = this.content.find('#scene');
 		$(closeVideo).on('click', function(){
-			scene.style.display = "block";
+			$(scene).css("display" ,"block");
 			video.remove();
+			soundButton.remove();
 			closeVideo.remove();
 			self.animate();
+			$(closeVideo).off('click');
 		});
-
-		video.play();
+		$(video)[0].play();
 		setTimeout(function(){
-			scene.style.display = "block";
+			$(scene).css("display" ,"block");
 			self.animate();
 		},20000);
 		setTimeout(function(){
-			closeVideo.remove();
-			video.remove();
+			$(closeVideo).remove();
+			$(video)[0].remove();
+			soundButton.remove();
+			self.off('Preload:End', self.startVideo);
 		},24000);
 	},
 	animate: function(){
@@ -67,5 +83,29 @@ define({
 		setTimeout(function(){
 			self.content.find(element).css('opacity','1');
 		}, timeout);
-	}
+	},
+	// Управление звуком
+	audioControll: function(){
+		var audio = document.getElementById('audio');
+		var img = document.getElementById('imgSound');
+		var state = JSON.parse(localStorage.getItem("sound"));
+	
+		console.log("this.audioState",state)
+	
+		if(state){
+			console.log('true');
+			$(img).attr('src','img/controll/volume_main_ok.png');
+		    audio.play();
+		}else {
+			console.log('false');
+			$(img).attr('src','img/controll/volume_main_x.png');
+		    audio.pause();
+		}
+	},
+	audioSwictcher: function(){
+		var state = JSON.parse(localStorage.getItem("sound"));
+		localStorage.setItem("sound",state?false:true);
+		console.log("sound");
+		this.audioControll();
+	},
 });

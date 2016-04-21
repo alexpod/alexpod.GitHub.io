@@ -1,33 +1,42 @@
 .shipContainer{
-	transition: all 120s ease-in-out;
+	transition: all 90s ease-in-out;
 	position: absolute;
 	left: 76%;
 	top: 83%;
 }
 
 .ship-move-left{
-	transform: translate(-1700px,0);
+	transform: translate(-100vw,0);
 }
 
 .ship-move-right{
-	transform: translate(0,0);
+	transform: translate(-10vw,0);
 }
 
 .ship{
 		animation-name: pitching;
-		animation-duration: 5000ms;
+		animation-duration: 9000ms;
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
 }
 
 @keyframes pitching {
-		0%   {transform:rotate(-2deg);}
-		14%  {transform:rotate(-4deg);}
-		29% {transform:rotate(-2deg);}
-		43% {transform:rotate(0deg);}
-		57% {transform:rotate(2deg);}
-		71% {transform:rotate(4deg);}
-		85% {transform:rotate(2deg);}
+		0%  {transform:rotate(0deg);}
+		6%  {transform:rotate(-1deg);}
+		12%  {transform:rotate(-2deg);}
+		18% {transform:rotate(-3deg);}
+		24% {transform:rotate(-4deg);}
+		30% {transform:rotate(-3deg);}
+		36% {transform:rotate(-2deg);}
+		42% {transform:rotate(-1deg);}
+		48% {transform:rotate(0deg);}
+		54% {transform:rotate(1deg);}
+		60% {transform:rotate(2deg);}
+		66% {transform:rotate(3deg);}
+		72% {transform:rotate(4deg);}
+		78% {transform:rotate(3deg);}
+		84% {transform:rotate(2deg);}
+		90% {transform:rotate(1deg);}
 		100% {transform:rotate(0deg);}
 }
 
@@ -50,7 +59,7 @@
 	    background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
-		background-image: url(../../../img/controll/scrollTop.png);
+		background-image: url(./../../../img/controll/scrollTop.png);
 	}
 
 	a{
@@ -102,14 +111,14 @@
 
 		.modal-korfu{
 			left: 17%;
-	    top: 65%;
+			top: 65%;
 		}
 
 		.modal-crete{
 			left: 69%;
-	    top: 64%;
+			top: 64%;
 		}
-
+		
 		.map {
 			position: relative;
 			width: 100%;
@@ -118,16 +127,36 @@
 			left: 0;
 			top: 0;
 		}
+		
+		.responsive-image {
+			width:100%;
+			height:100%;
+			background-size:cover;
+			background-position:50% 0;
+		}
+		  
+		.set-points {
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			position:absolute;
+		}
 
 		.point{
 			position: absolute;
 			background-position: center !important;
 			background-repeat: no-repeat !important;
+			/*
 			width: 115px;
 			height: 113px;
+			*/
+			width: 5.6%;
+			height: 10%;
 			z-index: 2;
 		}
 
+		/*
 		.done{
 			position: absolute;
 			background-position: center !important;
@@ -136,7 +165,17 @@
 			height: 57px;
 			z-index: 2;
 		}
-
+		*/
+		
+		img {
+			&.done {
+				width:5.6%;
+				height:10%;
+				position:absolute;
+				transform: scale(.5);
+			}
+		}
+		
 		.animatePoint{
 			transition: all 2s ease;
 		}
@@ -152,6 +191,7 @@
 			opacity: 1;
 		}
 
+		/*
 		.athens{
 			top: 10%;
 			left: 46%;
@@ -171,27 +211,71 @@
 			top: 57%;
 			left: 86%;
 		}
+		*/
+		
+		.athens {
+			top: 15.3%;
+			left: 38.9%;
+		}
 
+		.delphi {
+			top: 27.8%;
+			left: 27.5%;
+		}
+
+		.korfu {
+			top: 64.4%;
+			left: 9.8%;
+		}
+
+		.crete {
+			top: 57.2%;
+			left: 81.9%;
+		}
+		
+		/*
 		.illustrationNature {
-		    top: 16%;
-			left: 2%;
+			top: 16.5%;
+			left: 2.6%;
 		}
 
 		.illustrationStyle{
 			top: 17%;
 			left: 24%;
 		}
-
-		.illustrationText{
-			top: 2%;
-			left: 45.2%;
+		
+		.illustrationText {
+			top: 4.5%;
+			left: 43%;
 		}
-
-		.illustrationDetail{
-			top: 1%;
+		
+		.illustrationDetail {
+			top: 2.5%;
 			left: 70.5%;
 		}
+		*/
+		
+		.illustrationNature {
+			top: 5%;
+			left: 24%;
+		}
 
+		.illustrationStyle {
+			top: 21%;
+			left: 38.7%;
+		}
+
+		.illustrationText {
+			top: 9.2%;
+			left: 47%;
+		}
+
+		.illustrationDetail {
+			top: 2.9%;
+			left: 74%;
+		}
+		
+		/*
 		.birthdayPeter{
 			top: 52%;
 			left: 5.5%;
@@ -217,7 +301,7 @@
 				top: 43.5%;
 			}
 		}
-
+		
 		.euroDressPeter{
 			top: 51.5%;
 			left: 42%;
@@ -230,7 +314,7 @@
 				top: 43.5%;
 			}
 		}
-
+		
 		.SaintPetersburg{
 			top: 51.5%;
 			left: 60%;
@@ -243,7 +327,7 @@
 				top: 43.5%;
 			}
 		}
-
+		
 		.deathPeter{
 			top: 51.5%;
 			left: 80%;
@@ -255,8 +339,62 @@
 			@media screen and (max-height: 660px){
 				top: 43.5%;
 			}
+
+		}
+		*/
+		
+		/*
+		.birthdayPeter{
+			top: 47%;
+			left: 5.5%;
+		}
+		
+		.fortunePeter {
+			top: 47%;
+			left: 21%;
+		}
+		
+		.euroDressPeter{
+			top: 47%;
+			left: 42%;
+		}
+		
+		.SaintPetersburg{
+			top: 47%;
+			left: 60%;
 		}
 
+		.deathPeter{
+			top: 47%;
+			left: 80%;
+		}
+		*/
+		
+		.birthdayPeter {
+			top: 47.2%;
+			left: 9.6%;
+		}
+
+		.fortunePeter {
+			top: 47.2%;
+			left: 25%;
+		}
+
+		.euroDressPeter {
+			top: 47.2%;
+			left: 43.2%;
+		}
+
+		.SaintPetersburg {
+			top: 47.2%;
+			left: 60.5%;
+		}
+
+		.deathPeter {
+			top: 47.2%;
+			left: 80%;
+		}
+		
 		.cloud {
 			position: absolute;
 	   		transition: all 120s ease-in-out;
@@ -287,6 +425,7 @@
 	}
 }
 
+/*
 @media screen and (max-height:660px) {
 	.screenContainer .maps .illustrationStyle {
 	    top: 12%;
@@ -306,3 +445,4 @@
 		}
 	}
 }
+*/

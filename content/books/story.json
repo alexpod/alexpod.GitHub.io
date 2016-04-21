@@ -3,11 +3,11 @@
 		{
 			"leftPage":{
 		   		"title": "Двенадцать рисунков В.Серова на басни И.А.Крылова",
-				"text": ["Известный купец и книгоиздатель Анатолий Мамонтов очень любил искусство и не раз обращался к Валентину Серову с предложением проиллюстрировать то одну, то другую книгу. В 1895 году он попросил художника сделать несколько рисунков к басням Крылова, и Серов с радостью ухватился за мысль, открывавшую широкое поле для применения его страсти и знаний «по звериной части».  Вначале он думал проиллюстрировать все басни, но постепенно пришел к мысли ограничить их число, отобрав только свои любимые. Издание должно было называться «Двенадцать рисунков В.Серова на басни И.А.Крылова» и состоять из 12 рисунков крупного размера. Работу над этими иллюстрациями художник вел до конца своей жизни.", "Цит. по: Грабарь И. Серов - рисовальщик. М., Издательство АХ СССР, 1961. С.37-43"],
+				"text": ["Известный купец и книгоиздатель Анатолий Мамонтов очень любил искусство и не раз обращался к Валентину Серову с предложением проиллюстрировать то одну, то другую книгу. В 1895 году он попросил художника сделать несколько рисунков к басням Крылова, и Серов с радостью ухватился за мысль, открывавшую широкое поле для применения его страсти и знаний «по звериной части».  Вначале он думал проиллюстрировать все басни, но постепенно пришел к мысли ограничить их число, отобрав только свои любимые. Издание должно было называться «Двенадцать рисунков В.Серова на басни И.А.Крылова» и состоять из 12 рисунков крупного размера. Работу над этими иллюстрациями художник вел до конца своей жизни."],
 		   		"page": "1"
 			},
 			"rightPage":{
-		   		"title": "Иллюстрации к басням",
+		   		"title": "Оглавление",
 		   		"menu": {
 			   			"":[
 			   				{
@@ -65,7 +65,7 @@
    		},
 		{
 			"leftPage":{
-		   		"title": "ОБОЗ",
+		   		"title": "",
 				"thumbnail": "img/reader/krylov/1_thumb.jpg",
 				"image": "img/reader/krylov/1.jpg",
 				"page": "3"
@@ -104,12 +104,12 @@
 		{
 			"leftPage":{
 		   		"title": "",
-				"thumbnail": "img/reader/krylov/2_thumb.jpg",
-				"image": "img/reader/krylov/2.jpg",
+				"thumbnail": "./img/reader/krylov/2_thumb.jpg",
+				"image": "./img/reader/krylov/2.jpg",
 				"page": "9"
 			},
 			"rightPage":{
-		   		"title": "Ворона и лисица",
+		   		"title": "",
 		   		"text": ["Вертит хвостом, с Вороны глаз не сводит", "И говорит так сладко, чуть дыша:", "Голубушка, как хороша!", "Ну что за шейка, что за глазки!", "Рассказывать, так, право, сказки!", "Какие перышки! какой носок!", "И, верно, ангельский быть должен голосок!", "Спой, светик, не стыдись!", "Что ежели, сестрица,", "При красоте такой и петь ты мастерица,", "Ведь ты б у нас была царь-птица!", "Вещуньина с похвал вскружилась голова,"],
 				"page": "10"
 		   	}
@@ -129,12 +129,12 @@
 		{
 			"leftPage":{
 		   		"title": "Мельник",
-		   		"thumbnail": "img/reader/krylov/3_thumb.jpg",	
-		   		"image": "img/reader/krylov/3.jpg",	
+		   		"thumbnail": "./img/reader/krylov/3_thumb.jpg",	
+		   		"image": "./img/reader/krylov/3.jpg",	
 		   		"page": "13"
 			},
 			"rightPage":{
-		   		"title": "Мельник",
+		   		"title": "",
 		   		"text": ["И вот беда пришла совсем:","Стал жернов, мельница не служит.","Хватился Мельник мой: и охает, и тужит,","И думает, как воду уберечь.","Вот у плотины он, осматривая течь,","Увидел, что к реке пришли напиться куры.","«Негодные!» кричит: «хохлатки, дуры!","Я и без вас воды не знаю где достать;","А вы пришли ее здесь вдосталь допивать».","И в них поленом хвать.","Какое ж сделал тем себе подспорье?","Без кур и без воды пошел в свое подворье."],
 				"page": "13"
 		   	}
@@ -154,8 +154,8 @@
 		{
 			"leftPage":{
 		   		"title": "Волк и журавль",
-				"thumbnail": "img/reader/krylov/4_thumb.jpg",
-				"image": "img/reader/krylov/4.jpg",
+				"thumbnail": "./img/reader/krylov/4_thumb.jpg",
+				"image": "./img/reader/krylov/4.jpg",
 				"page": "16"
 			},
 			"rightPage":{
@@ -172,8 +172,8 @@
 			},
 			"rightPage":{
 		   		"title": "Тришкин кафтан",
-				"thumbnail": "img/reader/krylov/5_thumb.jpg",
-				"image": "img/reader/krylov/5.jpg",
+				"thumbnail": "./img/reader/krylov/5_thumb.jpg",
+				"image": "./img/reader/krylov/5.jpg",
 				"page": "19"
 		   	}
    		},
@@ -192,8 +192,8 @@
 		{
 			"leftPage":{
 		   		"title": "Квартет",
-				"thumbnail": "img/reader/krylov/6_thumb.jpg",
-				"image": "img/reader/krylov/6.jpg",
+				"thumbnail": "./img/reader/krylov/6_thumb.jpg",
+				"image": "./img/reader/krylov/6.jpg",
 				"page": "22"
 			},
 			"rightPage":{
@@ -217,8 +217,8 @@
 		{
 			"leftPage":{
 		   		"title": "Крестьянин и разбойник",
-				"thumbnail": "img/reader/krylov/7_thumb.jpg",
-				"image": "img/reader/krylov/7.jpg",
+				"thumbnail": "./img/reader/krylov/7_thumb.jpg",
+				"image": "./img/reader/krylov/7.jpg",
 				"page": "26"
 			},
 			"rightPage":{
@@ -235,8 +235,8 @@
 			},
 			"rightPage":{
 		   		"title": "Ворона",
-				"thumbnail": "img/reader/krylov/8_thumb.jpg",
-				"image": "img/reader/krylov/8.jpg",
+				"thumbnail": "./img/reader/krylov/8_thumb.jpg",
+				"image": "./img/reader/krylov/8.jpg",
 				"page": "29"
 		   	}
    		},
@@ -260,8 +260,8 @@
 			},
 			"rightPage":{
 		   		"title": "Лев и волк",
-				"thumbnail": "img/reader/krylov/9_thumb.jpg",
-				"image": "img/reader/krylov/9.jpg",
+				"thumbnail": "./img/reader/krylov/9_thumb.jpg",
+				"image": "./img/reader/krylov/9.jpg",
 				"page": "33"
 		   	}
    		},
@@ -280,8 +280,8 @@
 		{
 			"leftPage":{
 		   		"title": "Осел и мужик",
-				"thumbnail": "img/reader/krylov/10_thumb.jpg",
-				"image": "img/reader/krylov/10.jpg",
+				"thumbnail": "./img/reader/krylov/10_thumb.jpg",
+				"image": "./img/reader/krylov/10.jpg",
 				"page": "36"
 			},
 			"rightPage":{
@@ -297,8 +297,8 @@
 			},
 			"rightPage":{
 		   		"title": "Мартышка и очки",
-				"thumbnail": "img/reader/krylov/11_thumb.jpg",
-				"image": "img/reader/krylov/11.jpg",
+				"thumbnail": "./img/reader/krylov/11_thumb.jpg",
+				"image": "./img/reader/krylov/11.jpg",
 				"page": "39"
 		   	}
    		},
@@ -317,8 +317,8 @@
 		{
 			"leftPage":{
 		   		"title": "Щука",
-				"thumbnail": "img/reader/krylov/12_thumb.jpg",
-				"image": "img/reader/krylov/12.jpg",
+				"thumbnail": "./img/reader/krylov/12_thumb.jpg",
+				"image": "./img/reader/krylov/12.jpg",
 				"page": "32"
 			},
 			"rightPage":{

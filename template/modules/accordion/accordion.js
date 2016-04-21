@@ -9,9 +9,10 @@ define({
 		//Переключение колонок
 		self.find('li').on('click', function(e) {
 			var link = $(e.target).closest('li').attr('data-href');
+			var id = $(e.target).closest('li').attr('data-id');
 			self.find('li.active').toggleClass('active');
 			self.find($(e.target).closest('li')).toggleClass('active');
-			that.trigger('Accordeon:Listed');
+			app.soundChanger(id);
 			that.breadcrumbsRender("Уроки Валентина Серова",link);
 		});
 
@@ -20,58 +21,34 @@ define({
 			$(e.target).closest(".circle").toggleClass('hover');
 		});
 
-		//Автопереход колонок
-		this.on('RedLine:Passed',function(){
-			var elements = self.find('li');
-			var currentActive;
-
-			[].forEach.call(elements,function(li){
-
-				if(li.matches('.active')){
-
-					if((_.indexOf(elements, li) +1 ) == elements.length){
-
-						currentActive = 0;
-					}else{
-
-						currentActive = (_.indexOf(elements, li) + 1);
-					}
-				}
-			});
-
-			that.changeActiveBlock(elements,elements[(currentActive)]);
-			app.breadcrumbsRender("Уроки Валентина Серова",app.getActiveTab());
-		});
-
 		this.checkImageProgress();
 		this.animateButtons();
 	},
-	changeActiveBlock: function(allElement,mustActivateLi){
+	changeActiveBlock: function(mustActivateLi){
+		var self = this;
 
-		$(allElement).removeClass('active');
-		$(mustActivateLi).addClass('active');
-		this.trigger('Accordeon:Listed');
+		$(self.accordionHtml.find('li')).removeClass('active');
+		$('#'+mustActivateLi).closest('li').addClass('active');
 	},
 	checkImageProgress: function(){
 		var self = this;
 		var test = JSON.parse(localStorage.getItem("tests"));
-
 		//Вход в цикл
 		//console.log("ПРоверяем тест на выполнение");
 		if(test){
 			_.keys(test).forEach(function(element){
 
-				//console.log("Проверяем тест "+element+" на выполнение");
+				console.log("Проверяем тест "+element+" на выполнение");
 
 				if(test[element].statusGeneral){
 
-					//console.log("Проверяем тест "+element+" пройден");
+					console.log("Проверяем тест "+element+" пройден");
 					//console.log("Тест",test[element]);
 
-					$("#"+test[element].name +" img").attr("src",test[element].rewardGeneral);
-					$("#"+test[element].name).addClass("opened");
+					$(self.accordionHtml.find("#"+test[element].name +" .responsive-image")).css("background-image","url("+test[element].rewardGeneral+")");
+					$(self.accordionHtml.find("#"+test[element].name)).addClass("opened");
 				}else{
-					$("#"+test[element].name +" img").attr("src",test[element].baseImage);
+					$(self.accordionHtml.find("#"+test[element].name +" img")).attr("src",test[element].baseImage);
 				}
 			});
 		}else{
@@ -82,7 +59,7 @@ define({
 	getActiveTab: function(){
 		var self = this;
 
-		return $('li.active').attr('data-href');
+		return $(self.accordionHtml.find('li.active')).attr('data-href');
 	},
 	animateButtons: function(){
 		var self = this.accordionHtml;
@@ -113,7 +90,7 @@ define({
 			setTimeout(zoomSecond,1150);
 			setTimeout(zoomTherd,1300);
 			setTimeout(zoomOut, 1800);
-		  timerPoints = setTimeout(tick, 10000);
-		}, 10000);
+		  timerPoints = setTimeout(tick, 5000);
+		}, 5000);
 	}
 });

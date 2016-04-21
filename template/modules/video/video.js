@@ -8,13 +8,11 @@ define({
 	loadVideo: function(videoName){
 		var self = this;
 		self.videos = {};
-		require([
-					'text!../../../content/video/' + videoName + '.json'
-				], function(json) {
-				self.videos[videoName]={};
-				self.videos[videoName] = JSON.parse(json);
-				self.createVideoPage(self,videoName);
-			});
+		require(['text!./../../../serov/content/video/' + videoName + '.json'], function(json) {
+			self.videos[videoName]={};
+			self.videos[videoName] = JSON.parse(json);
+			self.createVideoPage(self,videoName);
+		});
 
 	},
 
@@ -27,8 +25,9 @@ define({
 	      "align": "centerXY",
 	      "width": 1920,
 	      "height": 1080,
-	      "path": "video/",
+	      "path": "./video/",
 	      "filename": videoName,
+	      "videoid": "backgroundVideo"+videoName,
 	      "types": ["mp4"],
 	      "preload": true,
 	      "autoplay": true,

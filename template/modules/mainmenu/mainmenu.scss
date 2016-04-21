@@ -7,13 +7,25 @@
 	height: 105px;
 	border-spacing: 0;
 	border-collapse: separate;
+
 	#mainMenu {
 		height: 73px;
+
+		.selectSectionClose{
+		    width: 100vw;
+		    height: 100vh;
+		    top: 0;
+		    left: 0;
+		    position: absolute;
+		    z-index: 22;
+		    display: none;
+		}
 		td {
 			background-color: #363636;
 			color: #999999;
-			button{
+			button,#turnOfSound{
 				background-color: transparent;
+				display: inline-block;
 				border: 0;
 				min-width: 98px;
 				border-right: 1px solid #717171;
@@ -31,6 +43,10 @@
 				&.pushed{
 					background-color: #4d4d4d;
 				}
+                margin-right: -3px;
+			}
+			#turnOfSound{
+			    padding-top: 30px;
 			}
 		}
 		.leftSide {
@@ -51,7 +67,7 @@
 				left: 0;
 				right: 0;
 				bottom: 105px;
-		    z-index: 5;
+		    	z-index: 100;
 				.overlay {
 					position: absolute;
 					left: 0;
@@ -112,13 +128,13 @@
 								background-repeat: no-repeat;
 							}
 							&.icon-game:before {
-								background-image: url(../../../img/controll/game.png);
+								background-image: url(./../../../img/controll/game.png);
 							}
 							&.icon-library:before {
-								background-image: url(../../../img/controll/library.png);
+								background-image: url(./../../../img/controll/library.png);
 							}
 							&.icon-bonus:before {
-								background-image: url(../../../img/controll/bonus.png);
+								background-image: url(./../../../img/controll/bonus.png);
 							}
 						}
 					}
@@ -156,6 +172,7 @@
 		.rightSide {
 				white-space: nowrap;
 				box-sizing: border-box;
+
 				.selectSection{
 				display: none;
 				position: absolute;
@@ -165,7 +182,7 @@
                 height: 100px;
 			    z-index: 999;
 			    text-align: center;
-				background-image: url(../../../img/controll/plashka.png);
+				background-image: url(./../../../img/controll/plashka.png);
 				background-repeat: no-repeat;
                 .reloadWrapper {
                     display: none;
@@ -202,14 +219,14 @@
                                 span {
                                     position: relative;
                                     display: inline-block;
-                                    background: url('../../../img/controll/point.png') 0 0 no-repeat;
+                                    background: url('./../../../img/controll/point.png') 0 0 no-repeat;
                                     width: 29px;
                                     height: 28px;
                                     text-align: center;
                                     line-height: 28px;
                                     margin: 0 5px;
                                     &.info:after {
-                                        background: url('../../../img/controll/ico-help.png') 0 0 no-repeat;
+                                        background: url('./../../../img/controll/ico-help.png') 0 0 no-repeat;
                                         width: 17px;
                                         height: 17px;
                                         position: absolute;
@@ -263,7 +280,8 @@
                                     clear: both;
                                     display: block;
                                 }
-                                span {
+                                >span {
+                                	pointer-events:none;
                                     float: left;
                                     text-transform: uppercase;
                                 }
@@ -304,7 +322,7 @@
 				&.goMenu{
 					right: 0px;
 					display: block;
-					background-image: url(../../../img/controll/plashkaLeft.png)!important;
+					background-image: url(./../../../img/controll/plashkaLeft.png)!important;
 				}
 				a{
 					cursor: pointer;
@@ -324,6 +342,7 @@
 			}
 			button:last-child {
 				border-right: 0;
+                margin-right: 0;
 			}
 		}
 	}
@@ -396,9 +415,16 @@
             }
             td {
                 button {
-                    height: 60px;
+                    height: 50px;
                     font-size: 12px;
                     padding: 0px 20px;
+                    &#reloadButton {
+                        padding-top: 5px;
+                    }
+                }
+                #turnOfSound {
+                    height: 50px;
+                    padding-top: 14px;
                 }
             }
         }
@@ -415,5 +441,11 @@
 	}
 	#menu #mainMenu .leftSide .leftMenu .menu .container .item.icon:before {
 		top: 11px;
+	}
+}
+
+@media screen and (max-width:1600px) {
+	#menu #mainMenu .leftSide .leftMenu {
+		bottom: 50px;
 	}
 }

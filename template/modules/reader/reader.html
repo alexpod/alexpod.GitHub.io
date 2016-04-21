@@ -28,17 +28,23 @@
 					    	{{else}}
 								{{#if image}}
 									<div class="imageWrapper">
-										<img src={{thumbnail}}>
+										<!--<img src={{thumbnail}}>-->
+										<div class="responsive-image" style="background-image:url({{thumbnail}});"></div>
 										<div class="imageTitleCover">
 											<p class="imageTitle">{{title}}</p>
-											<img class="openModal" data-fullImage={{image}} src="img/controll/loupe.png">
+											<img class="openModal" data-fullImage={{image}} src="./img/controll/loupe.png">
 										</div>
 									</div>
 								{{else}}
 									<p class='title'>{{title}}</p>
+									<p class='subTitle'>{{subTitle}}</p>
 									<div class='textWrapper'>
 										{{#each text}}
-											<p class='text'>{{this}}</p>
+											{{#if textHeader}}
+												<p class='textHeader'>{{textHeader}}</p>
+											{{else}}
+												<p class='text'>{{this}}</p>
+											{{/if}}
 										{{/each}}
 									</div>
 									<hr/>
@@ -54,11 +60,11 @@
 			<ul>
 				{{#each this}}
 					{{#ifCond @index "==" 0}}
-						<li class="active" data-link={{math @index "+" 1}}>
+						<li title="Страницы 1-2" class="active" data-link={{math @index "+" 1}}>
 					{{else}}
-						<li data-link={{math @index "+" 1}}>
+							<li title='Страницы {{superMath @index "*" 2 "+" 1}} - {{superMath @index "*" 2 "+" 2}}' data-link={{math @index "+" 1}}>
 					{{/ifCond}}
-							<img src="img/controll/book.jpg">
+							<img src="./img/controll/book.jpg">
 						</li>
 				{{/each}}
 			</ul>

@@ -1,5 +1,5 @@
-@import "../../../scss/partials/mixins/filter.scss";
-@import "../../../scss/partials/mixins/animation.scss";
+@import "./../../../scss/partials/mixins/filter.scss";
+@import "./../../../scss/partials/mixins/animation.scss";
 #preloader{
     background-color: #fff;
     width: 100%;
@@ -118,7 +118,7 @@
       left: 0;
       top: -150px;
       display: none;
-      background-image: url('../../../img/controll/paint.png');
+      background-image: url('./../../../img/controll/paint.png');
       background-position: center;
       background-size: contain;
       height: 150px;

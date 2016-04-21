@@ -25,7 +25,7 @@
 		    transition: all 500ms ease;
 		    background-color: rgba(0,0,0,0);
 		    background-repeat: no-repeat;
-		    background-image: url(../../../img/controll/button_backToGame.svg);
+		    background-image: url(./../../../img/controll/button_backToGame.svg);
 		    background-size: contain;
 		    bottom: 10%;
 		    left: 47.5%;
@@ -66,6 +66,19 @@
 				height: 100%;
 				float: right;
 			    position: relative;
+
+			    .imageWrapper{
+				    width: 100%;
+    				.imageTitleCover{
+    					.imageTitle{
+							float: left;
+    					}
+
+    					img{
+							float: right;
+    					}
+    				}
+				}
 			}
 			.leftPage{
 				float: left;
@@ -75,6 +88,15 @@
 
 			    .imageWrapper{
 				    width: 100%;
+    				.imageTitleCover{
+    					.imageTitle{
+							float: right;
+    					}
+
+    					img{
+							float: left;
+    					}
+    				}
 				}
 			}
 			.title{
@@ -83,8 +105,20 @@
 				font-weight: 500;
 				font-size: 1.5vw;
 			}
+			.subTitle{
+				text-transform: uppercase;
+				text-align: center;
+				font-weight: 500;
+				font-size: 1.5vw;
+			}
 			.textWrapper{
 				padding:2% 12%;
+			}
+			.textHeader{
+				text-transform: uppercase;
+			    text-align: center;
+			    font-weight: 500;
+			    font-size: 1.5vw;
 			}
 			.pageNumber{
 				text-align: center;
@@ -113,6 +147,14 @@
 					width: 100%;
 					height: 100%;
 				}
+				
+				.responsive-image {
+					width:100%;
+					height:100%;
+					background-size:cover;
+					background-position:50% 0;
+				}
+				
 				.imageTitleCover{
 					position: absolute;
 					bottom: 0;
@@ -124,11 +166,9 @@
 					.imageTitle{
 					    color: #ffffff;
 					    font-weight: 600;
-					    float: left;
 					}
 
 					img{
-						float: right;
 					    margin-top: 1%;
     					height: 60%;
     					cursor: pointer;
@@ -195,10 +235,10 @@
 		    height: 10%;
 		    background-size: contain;
 		    background-repeat: no-repeat;
-			background-image: url(../../../img/controll/button_previous.svg);
+			background-image: url(./../../../img/controll/button_previous.svg);
 
 			&:hover{
-				background-image: url(../../../img/controll/button_previous_hover.svg);
+				background-image: url(./../../../img/controll/button_previous_hover.svg);
 			}
 
 		}
@@ -208,10 +248,10 @@
 		    height: 10%;
 		    background-size: contain;
 		    background-repeat: no-repeat;
-			background-image: url(../../../img/controll/button_next.svg);
+			background-image: url(./../../../img/controll/button_next.svg);
 
 			&:hover{
-				background-image: url(../../../img/controll/button_next_hover.svg);
+				background-image: url(./../../../img/controll/button_next_hover.svg);
 			}
 		}
 

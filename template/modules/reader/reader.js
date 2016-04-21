@@ -10,7 +10,7 @@ define({
 		self.books = {};
 		books.forEach(function(bookName,i){
 			require([
-				'text!../../../content/books/' + bookName + '.json'
+				'text!./../../../serov/content/books/' + bookName + '.json'
 			], function(json) {
 				
 
@@ -37,7 +37,7 @@ define({
 	subscribeReader: function(pagesLength){
 		var self = this;
 		
-
+		checkArrow();
 //console.log('subscribeReader');
 		//Управление боковыми стрелками. Присваиваем предыдущую и следующую страницу.
 		self.previousPage = self.readerHtml.find('.left').previousPage = 0;
@@ -65,17 +65,18 @@ define({
 
 		//Обработка события с нижнего бара
 		self.readerHtml.find('[data-link]').on('click', function(e) {
-			var pageNumber = $(e.target.closest('li')).data('link');
+			var pageNumber = $($(e.target).closest('li')).data('link');
 
 			self.readerHtml.find('.active').toggleClass('active');
 			self.readerHtml.find('[data-link='+pageNumber+'],[data-number='+pageNumber+']').toggleClass('active');
 			self.previousPage = pageNumber - 1;
 			self.nextPage = pageNumber + 1;
+			checkArrow(pageNumber);
 		});
 
 		//Обработка событий с боковых стрелок.
 		self.readerHtml.find('[data-controll]').on('click', function(e) {
-			var pageLocation = $(e.target.closest('span')).data('controll');
+			var pageLocation = $($(e.target).closest('span')).data('controll');
 			var pageNumber = self[pageLocation];
 
 			if(!(pageNumber <= 0) && !(pageNumber >= pagesLength + 1)){
@@ -84,6 +85,7 @@ define({
 				self.readerHtml.find('[data-link='+pageNumber+'],[data-number='+pageNumber+']').toggleClass('active');
 				self.previousPage = pageNumber - 1;
 				self.nextPage = pageNumber + 1;
+				checkArrow(pageNumber);
 			}	
 		});
 
@@ -95,7 +97,27 @@ define({
 			self.readerHtml.find('[data-link='+pageNumber+'],[data-number='+pageNumber+']').toggleClass('active');
 			self.previousPage = pageNumber - 1;
 			self.nextPage = pageNumber + 1;
+			checkArrow(pageNumber);
 		});
+
+		function checkArrow(pageNumber) {
+			var left = $('#reader .sliderControl.left');
+			var right = $('#reader .sliderControl.right');
+			pageNumber = pageNumber? pageNumber : 1;
+			if(pageNumber == 1){
+				left.css('display','none');
+				right.css('display','block');
+				console.log("First page");
+			}else if(pageNumber == pagesLength){
+				right.css('display','none');
+				left.css('display','block');
+				console.log("Last page");
+			}else{
+				right.css('display','block');
+				left.css('display','block');
+				console.log("Page Ok");
+			}
+		}
 	}
 
 })
