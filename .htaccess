@@ -1,0 +1,9 @@
+AddType image/svg+xml .svg .svgz
+AddEncoding gzip svgz
+
+#RewriteEngine on
+
+#RewriteCond %{REQUEST_URI} !/serov/
+#RewriteRule ^(.*)$ http://edu.tretyakov.ru/serov/$1 [R=permanent,L]
+
+

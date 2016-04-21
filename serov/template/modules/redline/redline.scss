@@ -1,0 +1,22 @@
+.redLine {
+    position: absolute;
+    bottom: 0px;
+    height: 6px;
+    padding-left: 96px;
+    width: 100%;
+	.loaded {
+		background-color: red;
+		width: 0%;
+		height: 100%;
+	}
+}
+
+@media screen and (max-height:768px) {
+	.redLine {
+	    position: absolute;
+	    bottom: 0px;
+	    height: 6px;
+	    padding-left: 96px;
+	    width: 100%;
+	}
+}

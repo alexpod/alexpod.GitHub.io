@@ -1,0 +1,85 @@
+<table id="menu">
+	<tr id="mainMenu">
+		<td class="leftSide">
+			<div class="icon">
+				<div class="top"></div>
+				<div class="middle"></div>
+				<div class="left"></div>
+			</div>
+			<div class="leftMenu hide">
+				<div class="overlay"></div>
+				<div class="menu">
+					<div class="container">
+						<a class="item icon icon-game">Игры</a>
+						<a href="#games/antiq" class="item">Античные мотивы</a>
+						<a href="#games/story" class="item">ИЛЛЮСТРАЦИИ К БАСНЯМ</a>
+						<a href="#games/history" class="item">СТРАНИЦЫ РУССКОЙ ИСТОРИИ</a>
+						<a class="item icon icon-library">Библиотека</a>
+						<div class="divider blue"></div>
+						<a href="#book/antiq" class="item">Мифология и путешествия</a>
+						<a href="#book/story" class="item">Басни Крылова</a>
+						<a href="#book/history" class="item">История Петра 1</a>
+						<!-- <a href="#" class="item icon icon-bonus">Бонус</a> -->
+						<div class="divider pink"></div>
+					</div>
+				</div>
+			</div>
+		</td>
+		<td class="breadcrumbs"></td>
+		<td class="rightSide">
+            <div class="selectSectionClose"></div>
+            <div class="selectSection">
+                <p>Обнулить результат?</p>
+                <div class="reloadWrapper">
+                    <div class="reloadContent">
+                        <span class="progress-title">Вы прошли игру на <span id="progressPercent">0</span>%</span>
+                        <div class="progress">
+                            <div class="progress-bar" id="progressBar" style="width:100%"></div>
+                        </div>
+                        <div class="points">
+                            Набрали <span id="progressScore">0</span> баллов
+                        </div>
+                        <div class="points points-active" style="display: none">
+                            Набрали <span>12</span> баллов из <span class="info"></span>
+                        </div>
+                        <div class="description">
+                            <span id="progressComment">У вас все еще впереди!</span>
+                        </div>
+                        <div class="status">
+                            <img id="progressImg" src="./img/controll/photo-1.jpg">
+                            <div class="status-title">Ваш статус: <span id="progressStatus">НОВИЧОК</span></div>
+                        </div>
+
+                        <div class="share" id="progressShare" title="Пройди задания и расскажи друзьям!">
+                            <span>Поделиться:</span>
+                    		<div id="shareBlock"></div>
+                        </div>
+
+                        <a href="#reset" class="btn">Обнулить результат</a>
+                    </div>
+                </div>
+                <a data-id="succesMenuButton" id="succesMenuButton">Да</a>
+                <a data-id="revertMenuButton" id="revertMenuButton">Нет</a>
+            </div>
+			<button data-id="reloadButton" id="reloadButton">
+				<img data-id="reloadButton" src="./img/controll/reload.png">
+			</button>
+			<a id="turnOfSound" href="#sound">
+				<img id="soundImage" src="img/controll/volume.png">
+			</a>
+			<button data-id="helpButton" id="helpButton">
+				<img data-id="helpButton" src="img/controll/help.png">
+			</button> 
+			<button data-id="aboutButton" id="aboutButton">О проекте</button>
+			<button data-id="goMenu" id="goMenu">
+				<img data-id="goMenu" src="./img/controll/menu.png">
+			</button>
+		</td>
+	</tr>
+	<tr id="copyRight">
+		<td colspan="3">© Государственная Третьяковская  галерея, 2016</td>
+	</tr>
+	<audio id="audio" loop>
+		<source data-current="antiq" src="./audio/antiq.mp3" type="audio/mpeg">
+	</audio>
+</table>
