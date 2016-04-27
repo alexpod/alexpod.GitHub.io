@@ -6,4 +6,5 @@ AddEncoding gzip svgz
 #RewriteCond %{REQUEST_URI} !/serov/
 #RewriteRule ^(.*)$ http://edu.tretyakov.ru/serov/$1 [R=permanent,L]
 
-
+RewriteCond %{HTTP_USER_AGENT} (?i:midp|samsung|iphone|android)
+RewriteRule ^(/)?$ http://yandex.ru/ [R=301]
